@@ -1,0 +1,170 @@
+/*表單樣式統一*/
+form{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+
+.custom_field input,.custom_select select,#ym{
+    border: none;
+    appearance: none;
+    outline: none;
+    background-color: #606060;
+    padding: 20px;
+    width: 13rem;
+    height: 63px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    margin: 0 8px;
+    background-repeat: no-repeat;
+    background-position: right 12px bottom 18px;
+    cursor: pointer;
+}
+
+/*客製表單:select*/
+form select{
+    background: none;
+    font-size: 16px;
+    background-image: url(../img/icon/arrowDown.svg);
+}
+.custom_select{
+    position: relative;
+}
+.custom_select .selectPlacehd{
+    position: absolute;
+    font-size: 10px;
+    top:4px;
+    left:28px 
+}
+
+/*客製表單:monthpicker*/
+#ym{
+    background-image: url(../img/icon/calendar.svg);
+}
+.monthPick{
+    position: relative;
+}
+.monthPick span{
+    position: absolute;
+    font-size: 10px;
+    top:4px;
+    left:28px 
+}
+
+/*客製表單:價錢框*/
+form .price p{
+    font-size: 10px;
+    margin: 0 8px;
+}
+form .price h3{
+    font-size: 30px;
+    color: white;
+}
+
+/*客製表單:input*/
+.custom_field{
+    position: relative;
+    font-size: 16px;
+}
+.custom_field .placeholder{
+    position: absolute;
+    left: 15px;
+    top:50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: white;
+    transition:
+       top .3s ease, font-size .3s ease; 
+}
+.custom_field .kg_fixed{
+    position: absolute;
+    right: 15px;
+    top:50%;
+    transform: translateY(-50%);
+    color: white;
+}
+.custom_field .alert{
+    position: absolute;
+    width: 14rem;
+    font-size: 10px;
+    color:white;
+    background-color: #333;
+    border-radius: 10px;
+    padding: 8px;
+    display: none;
+}
+
+.custom_field input:valid+.placeholder,
+.custom_field input:focus+.placeholder{
+    font-size: 10px;
+    top:10px;
+    left:20px   
+}
+
+/*input number消除旁邊箭頭*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+/* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+
+/*客製表單:submit*/
+.bookin_submit button{
+    position: relative;
+    width: 63px;
+    height: 63px;
+    margin: 0 8px;
+    appearance: none;
+    border: none;
+    background-color: #606060;
+    border: 1px solid white;
+    opacity: .7;
+}
+.bookin_submit button::before{
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:white;
+    z-index: 1;
+    pointer-events: none;
+    transform: scaleY(0);
+    transform-origin: 50% 0%;
+    transition:transform .2s;
+}
+.bookin_submit button:hover:before{
+    transition:transform .4s;
+    transform-origin: 50% 100%;
+    transform: scaleY(1);
+}
+.bookin_submit button:hover i{
+    color: black;
+    opacity: 1;
+    transition: .2s;
+}
+.bookin_submit button i{
+    position: absolute;
+    font-size: 30px;
+    top:50%;
+    left:50%;
+    transform: translateX(-50%) translateY(-50%);
+    opacity: .7;
+    z-index: 2;
+    color: white;
+}
+.book_sec1 i.fa-angle-down{
+    position: absolute;
+    bottom:50px;
+    font-size: 40px;
+    opacity: 1;
+    animation:goDown 2s ease infinite;
+}

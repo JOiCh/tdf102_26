@@ -1,0 +1,254 @@
+@import 'layout.css';
+/*----------------------------------------sec_1st----*/
+section.sec_1st {
+    min-height: 100vh;
+    position: relative;
+    background-image: url(../img/index/bg_stars.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    /*視差捲動⇓*/
+    perspective: 1px;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+}
+section.sec_1st::-webkit-scrollbar {
+    display: none;
+}
+
+
+/*main區*/
+main {
+    height: 100vh;
+    margin: 0 auto;
+    position: relative;
+
+}
+
+.content {
+    position: absolute;
+    width: 35%;
+    bottom: 150px;
+    right: 140px;
+}
+
+.content h3 {
+    color: #8EDDF9;
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.content h2 {
+    font-size: 38px;
+    font-family: 'Ubuntu';
+}
+
+.content p {
+    width: 85%;
+    margin-bottom: 40px;
+}
+
+/*首屏視差捲動圖區*/
+section .img_earth,
+section .img_ship {
+    position: absolute;
+}
+
+.img_earth {
+    left: 0px;
+    bottom: 0px;
+    width: 70%;
+    pointer-events: none;
+    transform: translateZ(0px) scale(1.3);
+    z-index: -2;
+}
+
+.img_ship {
+    left: 130px;
+    bottom: 100px;
+    width: 35%;
+    transform: translateZ(-1px) scale(2.4);
+    z-index: -1;
+}
+
+/*-------------------------------section2*/
+/*上半部卡片*/
+.content2 .flex_cds {
+    display: flex;
+    justify-content: space-around;
+    width: 85%;
+    margin: 100px auto 70px auto;
+}
+
+.flex_cds .card {
+    max-width: 300px;
+}
+
+.flex_cds .card a {
+    max-width: 300px;
+    overflow: hidden;
+}
+
+.flex_cds .card img {
+    max-width: 300px;
+    max-height: 195px;
+}
+
+.flex_cds .card a:hover img {
+    transform: scale(1.5);
+    transition: .8s;
+}
+
+.flex_cds .card h4 {
+    text-shadow: 2px 2px 3px #666;
+    position: relative;
+    margin-top: 50px;
+    margin-bottom: 18px;
+}
+
+.flex_cds .card h4::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 4rem;
+    height: 1.2rem;
+    left: 0.6rem;
+    top: 0.7rem;
+    background-color: #8EDDF9;
+    box-shadow: 2px 2px 3px #8EDDF9;
+    z-index: -1;
+}
+
+.flex_cds .card p {
+    font-weight: bold;
+}
+
+.flex_cds .card p:nth-child(3) {
+    color: #447884;
+    font-size: 12px;
+}
+
+/*下半部*/
+.box_rel {
+
+    /* min-height: 80vh; */
+    width: 82%;
+    margin: 0 auto;
+    position: relative;
+
+}
+
+
+/* .flex_box img {
+    width: 70%;
+} */
+
+.title-outer{
+    width: 70%;
+      background-image: url(../img/index/news_bg.jpg);
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 60%;
+      background-position: bottom 0px right 0px; 
+}
+
+.title-outer img {
+    max-width: 100%;
+}
+
+.title-outer.-bottom{
+    height: 200px;
+}
+.box_rel .flex_box {
+    /* border: 1px solid hotpink; */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.flex_box button {
+    align-self: center;
+    transform: translateY(-82%);
+}
+
+
+
+.box_rel h3 {
+    width: 20rem;
+}
+
+/*-------------------------------section3*/
+.index_sec3 .numbers {
+    display: block;
+    text-align: center;
+    margin-top: 100px;
+    font-size: 0px;
+}
+
+.index_sec3 .numbers .cube {
+    display: inline-block;
+    min-width: 230px;
+    min-height: 125px;
+    border-right: solid 1px #FDD834;
+    text-align: center;
+}
+
+.index_sec3 .cube h3 {
+    padding: 15px 0px;
+    color: white;
+}
+
+.index_sec3 .numbers .cube:last-child {
+    border-right: none;
+}
+
+.index_sec3 p.commercial {
+    margin-top: 40px;
+    margin-left: 197px;
+    width: 38%;
+}
+
+/*-------------------------------section4*/
+.index_sec4 .box_plane {
+    width: 55%;
+    /* min-width: 700px; */
+    margin: 100px auto;
+    padding: 60px;
+    position: relative;
+}
+
+.index_sec4 .box_plane::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    border: 2px solid #8EDDF9;
+    box-shadow: 2px 2px 3px #8EDDF9;
+    position: absolute;
+    z-index: -2;
+}
+
+.box_plane h3 {
+    width: 60%;
+}
+
+.box_plane p {
+    width: 80%;
+    margin-top: 22px;
+}
+
+.box_plane img {
+    max-width: 330px;
+    position: absolute;
+    right: -50px;
+    top: -60px;
+    z-index: -1;
+}
+
+.box_plane button {
+    margin-top: 35px;
+}

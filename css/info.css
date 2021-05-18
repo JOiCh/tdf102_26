@@ -1,0 +1,114 @@
+@import url(./layout.css);
+.info_sec1{
+    margin-top: 10px;
+}
+.info_sec2{
+    font-size: 0px;
+}
+
+article {
+    width: 80%;
+    height: 250px;
+    margin: 100px auto 30px auto;
+    
+}
+article:nth-of-type(1) img{
+    max-height: 250px;
+    float: right;
+    shape-outside: url(../img/info/station.png);
+    shape-margin: 1.5em
+}
+
+article:nth-of-type(1) h3{
+    transform: translate(-10% -50%);
+}
+
+article:nth-of-type(2){
+    margin-top: 50px;
+}
+
+article:nth-of-type(2) img{
+    max-height: 250px;
+    float: left;
+    shape-outside: url(../img/info/spacebed.png);
+    shape-margin: 1.5em
+}
+article .word p:last-child{
+    color:yellow;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+}
+article::after{
+    content: "";
+    display: block;
+    clear: both;
+
+}
+
+/*輪播上半圓*/
+.up{
+    width: 100%;
+    position: relative;
+    margin-top: 100px;
+}
+.info_sec2 h2{
+    font-size: 120px;
+    position: absolute;
+    bottom:40px;
+    left:50%;
+    transform: translateX(-50%);
+}
+.info_sec2 .down{
+    background-color: #447884;
+    width: 100%;
+
+}
+
+/*輪播本人*/
+.info_sec2 .down .slider{
+    max-width:80%;
+    margin: 0px auto;
+    padding: 10px;
+}
+
+.slider .s_above{
+    margin-bottom: 10px;
+}
+.slider .s_below{
+    margin-bottom: 80px;
+}
+.slider .s_above img,.s_below img{
+    max-width: 100%;
+    margin: 0px;
+}
+.slick-next{
+    transform: translateX(20px) translateY(-175%);
+
+}
+.slick-prev{
+    transform: translateX(-15px) translateY(-175%);
+}
+/*輪播滑過效果*/
+.out a{
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
+    position: relative;
+    overflow: hidden;
+    
+}
+.out a>div{
+    width: 100%;
+    background-color: rgba(51, 51, 51, 0.3);
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    padding: 10px 8px;
+    text-align: center;
+    transform: translateY(100%);
+    transition: .5s;
+}
+.out a:hover div{
+    transform: translateY(0%);
+}

@@ -1,0 +1,214 @@
+@import 'layout.css';
+.pay_sec1{
+    margin: 100px 0 120px 0;
+}
+
+.pay_sec1 h3{
+    text-align: center;
+}
+
+/* 麵包屑 */
+.breadcrumb{
+    padding: 20px 14%;
+    color:#8EDDF9 ;
+}
+.breadcrumb a,.breadcrumb i{
+    display: inline-block;
+    color:white
+}
+
+/*table*/
+table{
+    margin:0px auto;
+    border-collapse:separate;
+    border-spacing:10px 15px
+}
+table tr,table tr td{
+    padding: 18px 12px;
+    background-color: #ffffff20;
+}
+table th{
+    font-size: 12px;
+    color: #447884;
+    text-align: left;
+}
+table tr td{
+    border: 1px solid white;
+}
+table tr:first-child {
+    background-color: transparent;
+}
+
+/*總計*/
+.total_number{
+    width: 15rem;
+    margin: 0 auto;
+}
+.total_number i,.no1 p,
+.no2 span,.no2 + p,
+.no3 p,.pay_number p,
+.pay_number span{
+    font-weight: bold;
+}
+.no1 p,
+.no2 h3,.no2 span,
+.no3 p,.pay_number p{
+    font-size: 20px;
+}
+
+.total_number i,
+.no1 p,.no2 h3,
+.no2 span,.no3 p,
+.no3 span,.pay_number p,
+.pay_number span{
+    display: inline-block;
+}
+.no2 span,
+.no3 span,
+.pay_number span{
+    font-size: 14px;
+}
+.no1 p{
+    margin: 10px 0;
+}
+.no2 h3,.no2 span,.no2 i{
+    color:#8EDDF9 ;
+}
+.pay_number p, 
+.pay_number span,
+.pay_number i{
+    color: #FDD834;
+}
+.pay_number p {
+    margin-top: 20px;
+    position: relative;
+}
+.pay_number p::before{
+    content: "";
+    display: block;
+    width: 14rem;
+    height: 1.7rem;
+    border-top: #707070 1px solid;
+    position: absolute;
+    bottom: 0px;
+    left: -14px;
+}
+
+/* 卡片區 */
+.cards{
+    width: 70%;
+    display: flex;
+    justify-content:space-around;
+    margin: 20px auto;
+    text-align: center;
+}
+.cards .creditCard{
+    border: 1px solid #707070;
+    width:260px ; 
+}
+.creditCard img{
+    margin: 20px auto 0px auto;
+    height: 62px;
+}
+.creditCard button{
+    margin: 20px;
+}
+.creditCard:hover{
+    background-color: #8edcf931;
+}
+
+/* 表單區 */
+form{
+    width: 45%;
+    margin: 40px auto 50px auto;
+    position: relative;
+}
+form input, form select{
+    padding: 15px;
+    font-size: 16px;
+    background-color:#707070;
+    color: white;
+    border: 1px solid white;
+    outline: none;
+    margin-top: 15px;
+}
+form input:focus, form select:focus{
+    border: 1px solid #8EDDF9;
+}
+form span{
+    font-size:12px;
+    position: absolute;
+    color:#CBC9C9;
+}
+form .item{
+    position: relative;
+    display: flex;
+    margin-top: 10px;
+}
+.item:nth-of-type(1) input{
+    width: calc( 80% / 4 );
+    margin-right: 3px;
+}
+.item:nth-of-type(2) input{
+    width: 32rem;
+}
+.item:nth-of-type(3) select{
+    width:10rem;
+    margin-right: 20px;
+}
+.item:nth-of-type(3) input{
+    width:9.3rem;
+    display: inline-block;
+}
+.select_month, .select_year{
+    position: relative;
+    display: inline-block;
+}
+.select_month span, .select_year span{
+    position: absolute;
+    top:33px;
+    left:53px;
+    font-weight: bold;
+}
+form button{
+    position: absolute;
+    right: -75px;
+    bottom: -95px;
+}
+/*input number消除旁邊箭頭*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+/* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+/* select換圖 */
+form select{
+    appearance: none;
+    background-image: url(../img/icon/arrowDown.svg);
+    background-repeat: no-repeat;
+    background-position: right 10px bottom 10px;
+}
+
+/* booking footer */
+footer.fr_booking{
+    background: none;
+    background-color: #333;
+    text-align: center;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+}
+footer.fr_booking a{
+    font-weight: bold;
+}
+footer.fr_booking span{
+    text-decoration: underline;
+    color: #8EDDF9;
+    cursor: pointer;
+}

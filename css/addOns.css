@@ -1,0 +1,229 @@
+@import "layout.css";
+.addOns_sec1{
+    margin-top: 100px;
+}
+.addOns_sec1 h3{
+    text-align: center;
+}
+.add_list .item{
+    margin: 15px 0px;
+}
+.above{
+    margin: 10px;
+}
+.total{
+    text-align: right;
+    margin: 20px;
+}
+.total p:first-child{
+    font-size: 12px;
+    color:#447884;
+    margin: 10px 0px;
+}
+.total p:last-child{
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+}
+.total i{
+    color: white;
+    display: inline-block;
+}
+.check {
+    display: flex;
+    justify-content: flex-end;
+}
+.check p{
+    font-size: 12px;
+    width: 60%;
+    text-align: center;
+    padding: 0px 50px;
+    margin-right: 50px;
+}
+/*麵包屑*/
+.breadcrumb{
+    padding: 20px 14%;
+    color:#8EDDF9 ;
+}
+.breadcrumb a,.breadcrumb i{
+    display: inline-block;
+    color:white
+}
+/*table*/
+table{
+    margin:40px auto 0px auto;
+    border-collapse:separate;
+    border-spacing:10px 15px;
+}
+table tr,table tr td{
+    padding: 18px 12px;
+    background-color: #ffffff20;
+}
+table tr td{
+    border: 1px solid white;
+}
+/*價錢框*/
+.route{
+    position: relative;
+    display: flex;
+}
+.price{
+    position: absolute;
+    bottom: 15px;
+    right: 10%;
+}
+.price h3{
+    font-size: 30px;
+    color:white
+}
+/* booking footer */
+footer.fr_booking{
+    background: none;
+    background-color: #333;
+    text-align: center;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+}
+footer.fr_booking a{
+    font-weight: bold;
+}
+footer.fr_booking span{
+    text-decoration: underline;
+    color: #8EDDF9;
+    cursor: pointer;
+}
+
+/*addons*/
+.add_list{
+    width: 72%;
+    margin: 20px auto;
+}
+
+/*checkbox換圖*/
+.checkbox,.cge_checkbox{
+    cursor: pointer;
+}
+.cge_checkbox[type="checkbox"]{
+    display: none;
+}
+.above .checkbox::before{
+    content: "";
+    display: inline-block;
+    width: 21px;
+    height: 21px;
+    margin-right: 5px;
+    transform: translateY(4px);
+    background-image: url(../img/icon/checkbox_outline.svg);
+    cursor: pointer;
+}
+.cge_checkbox[type="checkbox"]:checked + .checkbox::before{
+    background-image: url(../img/icon/checkbox.svg);
+    transition: .2s;
+}
+/* 右邊的價格 */
+.above{
+    display: flex;
+    justify-content: space-between;
+}
+.add_price i,.add_price p{
+    display: inline-block;
+}
+.add_price p{
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+}
+.add_price p::after{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 130%;
+    top:0px;
+    right:0px;
+    border-bottom: rgb(117, 117, 117) 2px solid;
+}
+
+/* 下半部 */
+.below p{
+    width: 80%;
+    margin-left: 36px;
+}
+.radioBox{
+    margin: 10px 0px 10px 36px;
+}
+.radioBox .radio input,.radioBox .radio label{
+    display: inline-block;
+    vertical-align: middle;
+    
+}
+/* radio換圖*/
+
+.radio input[type="radio"]{
+    display: none;
+}
+.radio label::before{
+    content: "";
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    transform: translateY(4px);
+    margin-right: 5px;
+    background-image: url(../img/icon/radio_outline.svg);
+    cursor: pointer
+}
+.radio input[type="radio"]:checked + label::before{
+    background-image: url(../img/icon/radio.svg)
+}
+.radioBox .radio{
+    padding: 5px 0;
+}
+.radio label {
+    font-size: 20px;
+    cursor: pointer
+}
+/* 保險項目input*/
+.no5{
+    position: relative;
+}
+.no5::after{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 10rem;
+    height: 2rem;
+    border-bottom:rgb(117, 117, 117) 2px solid ;
+    top:0px;
+    left: 17%;
+    z-index: -1;
+
+}
+.no5 .add_price{
+    position: absolute;
+    left: 16%;
+    top:0px
+}
+.no5 .add_price input{
+    appearance: none;
+    outline: none;
+    background: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    padding-bottom: 10px;
+
+}
+/*input number消除旁邊箭頭*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+/* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}

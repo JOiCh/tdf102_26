@@ -1,0 +1,116 @@
+@import 'layout.css';
+.contact_sec1{
+    margin-top: 100px;
+}
+.contact_sec1 h3{
+    text-align: center;
+}
+.contact_sec1 h4{
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+/* 麵包屑 */
+.breadcrumb{
+    padding: 20px 14%;
+    color:#8EDDF9 ;
+}
+.breadcrumb a,.breadcrumb i{
+    display: inline-block;
+    color:white
+}
+
+/*table*/
+table{
+    margin:0px auto;
+    border-collapse:separate;
+    border-spacing:10px 15px
+}
+table tr,table tr td{
+    padding: 18px 12px;
+    background-color: #ffffff20;
+}
+table th{
+    font-size: 12px;
+    color: #447884;
+    text-align: left;
+}
+table tr td{
+    border: 1px solid white;
+}
+table tr:first-child {
+    background-color: transparent;
+}
+
+/* 表單 */
+form{
+    position: relative;
+    border: 1px solid hotpink;
+    width: 65%;
+    margin:0 auto 40px auto;
+}
+form .item{
+    margin-top: 15px;
+    position: relative;
+}
+form .item span{
+    position: absolute;
+    font-size: 12px;
+}
+form .item input{
+    width: 48%;
+    font-size: 16px;
+    background-color: #333;
+    border: 1px solid #999;
+    padding: 10px 8px ;
+    color:white;
+    margin:1rem 5px 0 0;
+    outline: none;
+}
+form .item input.ipt_name{
+    width: 97%;
+}
+
+/* 表單內其餘樣式 */
+.above h4, .below h4{
+    margin-bottom: 15px;
+}
+.above, .below{
+    margin-top: 40px;
+}
+.above .btn_level3, .below .btn_level3{
+    margin: 25px 0;
+}
+.above .btn_level3{
+    width: 113px;
+}
+.below{
+    margin-bottom: 40px;
+}
+.below .btn_level3{
+    margin-right: 30px;
+}
+button.btn_level1{
+    position: absolute;
+    bottom: 0px;
+    right: 23px;
+}
+/* booking footer */
+footer.fr_booking{
+    background: none;
+    background-color: #333;
+    text-align: center;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+}
+footer.fr_booking a{
+    font-weight: bold;
+}
+footer.fr_booking span{
+    text-decoration: underline;
+    color: #8EDDF9;
+    cursor: pointer;
+}

@@ -1,0 +1,270 @@
+ @import 'layout.css';
+ /*----------section1----------*/
+ main {
+    display: flex;
+    width: 1200px;
+    position: relative;
+}
+
+main h2 {
+    position: absolute;
+    top: 60px;
+    left: 150px;
+}
+
+.box_video {
+    margin-top: 80px;
+    text-align: center;
+}
+
+.box_video video {
+    width: 80%;
+}
+
+.content {
+    align-self: center;
+    width: 50%;
+    transform: translateX(-30%);
+}
+
+.content h4 {
+    color: #8EDDF9;
+    margin-bottom: 25px;
+}
+
+.content h3 {
+    color: white
+}
+
+.content p {
+    width: 75%;
+    margin-bottom: 40px;
+}
+
+/*----------section2*----------/
+/* 太空船 */
+.abt_sec2 h4 {
+    margin-top: 100px;
+    margin-left: 150px;
+    position: relative;
+    text-shadow: 2px 2px 3px #666;
+}
+
+.abt_sec2 h4::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 9.5rem;
+    height: 1.2rem;
+    left: 0.8rem;
+    top: 0.7rem;
+    background-color: #8EDDF9;
+    box-shadow: 2px 2px 3px #8EDDF9;
+    z-index: -1;
+}
+
+.abt_sec2 h4:last-of-type::after {
+    width: 11rem;
+}
+
+.box_cards {
+    display: flex;
+    margin-top: 40px;
+    justify-content: space-around;
+    padding: 0px 120px;
+}
+
+.box_cards .card {
+    max-width: 300px;
+    text-align: center;
+    background-color: white;
+}
+
+.box_cards .card .bg_img {
+    position: relative;
+    height: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    overflow: hidden;
+}
+.box_cards .card .bg_img::after{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/about/hyper.gif);
+    background-position: center;
+    transform: scale(1);
+    opacity: 0;
+  
+}
+
+.card .bg_img img {
+    position: absolute;
+    width: 60%;
+    max-height: 360px;
+    z-index: 1;
+    transform: translateY(0);
+    
+} 
+
+.box_cards .card:nth-of-type(3) img {
+    width: 40%;
+    margin: 0 auto;
+}
+
+.card p:nth-of-type(1) {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.card p {
+    color: #666
+}
+
+.card p:last-of-type {
+    width: 75%;
+    margin: 0 auto;
+}
+
+
+.card a {
+    margin-bottom: 20px;
+    color: #8EDDF9;
+    padding: 8px 10px;
+    font-size: 12px;
+}
+/* 太空船動畫 */
+@keyframes shipsMove{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(10px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+
+}
+/*card背景滑過動畫*/
+@keyframes opacity{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+}
+}
+@keyframes scale{
+    0%{
+        transform: scale(1);
+    }
+    75%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+.card .bg_img:hover:after{
+    animation: 
+    opacity 2s forwards,scale 2s infinite forwards
+ 
+}
+.card .bg_img:hover img{
+    animation: shipsMove 3s ease-in-out infinite; 
+}
+
+/*read more滑過動畫*/
+.card a i {
+    transition: all .5s;
+}
+
+.card a:hover i {
+    transition: all 1s;
+}
+
+.card a i.fixed {
+    transform: translate(-100%);
+}
+
+.card a:hover .arrow {
+    animation: toRight 1.3s ease infinite;
+}
+
+.card a:hover .arrow_fixed {
+    animation: toRight_fixed 1.3s ease infinite;
+}
+
+@keyframes toRight {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    5% {
+        transform: translateX(-0.1rem);
+    }
+
+    100% {
+        transform: translateX(1rem);
+        opacity: 0;
+    }
+}
+
+@keyframes toRight_fixed {
+    5% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.4;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* 太空人 */
+.box_men {
+    display: flex;
+    margin-top: 40px;
+    padding: 0 110px;
+    justify-content: center;
+
+}
+
+.men_img {
+    text-align: center;
+}
+
+.box_img {
+    overflow: hidden;
+    max-width: 235px;
+}
+
+.men_img:hover img {
+    transform: scale(1.3);
+    transition: .8s;
+}
+
+.box_men img {
+    width: 95%;
+    margin: 0 auto;
+}
+
+.box_men p {
+    font-weight: bold;
+    margin: 10px auto;
+}
+
+/*btn換色*/
+.box_btn {
+    text-align: center;
+}
+

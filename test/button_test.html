@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            perspective: 1000px;
+        }
+
+        .cube {
+            height: 100px;
+            width: 150px;
+            transition: all .5s ease;
+            transform-style: preserve-3d;
+            text-align: center;
+            margin: 0 auto;
+        }
+        .default,.hover{
+            height: 100px;
+            background: #2ecc71;
+            font-size: 16px;
+            text-transform: uppercase;
+            color: #fff;
+            line-height:100px;
+            transition: 250ms ease;
+
+        }
+
+        .cube:hover .default{
+            background: #0f4626;
+        }
+        .hover{
+            background: #229753; 
+        }
+
+        .default{
+            transform: translateZ(50px);
+        }
+
+        .cube .hover{
+           transform: rotateX(90deg);
+           transform: translateZ(150px);
+        }
+        .cube:hover{
+            transform: rotateX(-89deg);
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="cube">
+        <div class="default">
+            <span>Hover</span>
+        </div>
+        <div class="hover">
+            <span>flip</span>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

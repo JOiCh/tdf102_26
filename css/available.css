@@ -1,0 +1,112 @@
+@import "layout.css";
+@import 'form_booking.css';
+
+.available_sec1{
+    margin-top: 100px;
+}
+.available_sec1 h3{
+    text-align: center;
+}
+.available_above{
+    border: 1px solid blue;
+}
+.breadcrumb{
+    padding: 20px 14%;
+    border: 1px solid red;
+}
+.breadcrumb a{
+    color:#8EDDF9
+}
+.breadcrumb a,.breadcrumb i{
+    display: inline-block;
+}
+
+/*table*/
+table{
+    border: indigo 1px solid;
+    margin:40px auto;
+    border-collapse:separate;
+    border-spacing:10px 15px
+}
+table tr,table tr td{
+    padding: 18px 12px;
+    background-color: #ffffff20;
+}
+table th{
+    font-size: 12px;
+    color: #447884;
+    text-align: left;
+}
+table tr td{
+    border: 1px solid white;
+}
+table tr:first-child {
+    background-color: transparent;
+}
+
+/*客製submit*/
+table td:last-child{
+    border: none; 
+    padding: 0px; 
+}
+.tbl_btn button{
+    min-width: 63px;
+    padding: 15px;
+    background-color: #FDD834;
+    border: none;
+    position: relative;
+}
+.tbl_btn button i{
+    font-size:30px;
+    color:white;
+}
+
+/*submit滑過*/
+.tbl_btn button::before{
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: 0;
+    left: 0;
+    background-color: black; 
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    transform: scaleY(0);
+    transform-origin: 50% 100%;
+    transition:transform .2s;
+}
+.tbl_btn button:hover::before{
+    transform: scaleY(1);
+    border: 1px solid  #FDD834;
+    width: calc( 100% - 2px );
+    height: calc( 100% - 2px );;
+}
+.tbl_btn button:hover i{
+    position: relative;
+    color:#FDD834 ;
+    z-index: 2;
+}
+.tbl_btn button a{
+    padding: 0;
+}
+/* booking footer */
+footer.fr_booking{
+    background: none;
+    background-color: #333;
+    text-align: center;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+}
+footer.fr_booking a{
+    font-weight: bold;
+}
+footer.fr_booking span{
+    text-decoration: underline;
+    color: #8EDDF9;
+    cursor: pointer;
+}

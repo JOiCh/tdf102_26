@@ -1,0 +1,75 @@
+@import 'layout.css';
+.check_sec1{
+    margin: 100px 0 100px 0;;
+}
+.check_sec1 h3{
+    text-align: center;
+}
+main{
+    width: 720px;
+}
+main p{
+    margin-left: 11px;
+    font-weight: bold;
+    margin: 20px 0 0 11px;
+}
+.btn_position{
+    width: 100%;
+    text-align: right;
+    margin-top: 20px;
+}
+.btn_position button{
+    margin-right: 13px;
+}
+
+/* 麵包屑 */
+.breadcrumb{
+    margin-left: 11px;
+    color:#8EDDF9 ;
+}
+.breadcrumb a,.breadcrumb i{
+    display: inline-block;
+    color:white
+}
+
+/*table*/
+table{
+    margin:0px auto;
+    border-collapse:separate;
+    border-spacing:10px 15px
+}
+table tr,table tr td{
+    padding: 18px 12px;
+    background-color: #ffffff20;
+}
+table th{
+    font-size: 12px;
+    color: #447884;
+    text-align: left;
+}
+table tr td{
+    border: 1px solid white;
+}
+table tr:first-child {
+    background-color: transparent;
+}
+
+/* booking footer */
+footer.fr_booking{
+    background: none;
+    background-color: #333;
+    text-align: center;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+}
+footer.fr_booking a{
+    font-weight: bold;
+}
+footer.fr_booking span{
+    text-decoration: underline;
+    color: #8EDDF9;
+    cursor: pointer;
+}
