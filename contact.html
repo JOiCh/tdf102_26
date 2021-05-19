@@ -76,7 +76,7 @@
                     </label>
                     <label for="">
                         <span>Phone</span>
-                        <input type="text">
+                        <input type="number">
                     </label>
                 </div>
                 <div class="item">
@@ -121,7 +121,7 @@
                     <p>By clicking the "I Agree" button, you agree to our <span>Site Terms</span>, and that if SpaceZ
                         accepts your request for reservation, your launch will be governed by the <span>Terms and
                             Conditions</span>> and Rideshare Users Guide.</p>
-                    <button class="btn_level3"><a href="">I AGREE</a></button>
+                    <button class="btn_level3" id="agree"><a href="">I AGREE</a></button>
                 </div>
                 <hr>
                 <div class="below">
@@ -133,7 +133,8 @@
                     <button class="btn_level3"><a href="">I CONFIRM</a></button>
                     <button class="btn_level3"><a href="booking.html">I CANNOT CONFIRM</a></button>
                 </div>
-                <button type="submit" class="btn_level1"><a href="payment.html">CONTINUE</a></button><!--要寫a的return false-->
+                <button type="submit" class="btn_level1"><a href="payment.html">CONTINUE</a></button>
+                <!--要寫a的return false-->
             </form>
         </main>
     </section>
@@ -147,6 +148,16 @@
             <p>Please contact <span>rideshare@spacez.com</span> for any questions.</p>
         </div>
     </footer>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#agree a').click(function (event) {
+                event.preventDefault();
+                $(this).html('<i class="far fa-check"></i>');
+                $('.btn_level3::after').css('width','145%'); //這行沒用欸
+            });
+        });
+    </script>
 </body>
 
 </html>

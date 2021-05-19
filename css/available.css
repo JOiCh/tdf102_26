@@ -7,12 +7,8 @@
 .available_sec1 h3{
     text-align: center;
 }
-.available_above{
-    border: 1px solid blue;
-}
 .breadcrumb{
     padding: 20px 14%;
-    border: 1px solid red;
 }
 .breadcrumb a{
     color:#8EDDF9
@@ -23,7 +19,6 @@
 
 /*table*/
 table{
-    border: indigo 1px solid;
     margin:40px auto;
     border-collapse:separate;
     border-spacing:10px 15px

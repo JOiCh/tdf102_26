@@ -1,13 +1,17 @@
 @import 'layout.css';
+
+/*-------上方區-------*/
 .seat_sec1{
     margin: 100px 0 100px 0;;
 }
 .seat_sec1 h3{
     text-align: center;
 }
+
+
 /*table*/
 table{
-    margin:0px auto;
+    margin:10px auto;
     border-collapse:separate;
     border-spacing:10px 15px
 }
@@ -26,10 +30,49 @@ table tr td{
 table tr:first-child {
     background-color: transparent;
 }
+
+
+/*------內容區-------*/
+.content{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 20px 0 0 30px;
+    
+}
+.content .hello{
+    align-self: flex-start;
+    position: relative;
+    padding: 25px 30px;
+    text-align: center;
+} 
+.content .hello::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top:0px;
+    left: 0px;
+    width: calc(100% - 3px);
+    height: calc(100% - 3px);
+    border: 3px solid #8EDDF9;
+    filter: drop-shadow(2px 2px 3px white);
+    z-index: -1;
+}
+.content .hello p{
+    font-weight: bold;
+}
+.content .hello h4{
+    font-size: 16px;
+}
+
 /*svg*/
+.svg{
+    width: 359px;
+    height: 350px;
+    overflow: auto;
+}
 .img_svg{
-    width: 25%;
-    height: 25%;
+    width: 100%;
 }
 .cls-2:hover{
     fill:#FDD834;
@@ -41,8 +84,39 @@ table tr:first-child {
     cursor: not-allowed !important;
 }
 
+/*座位示意圖*/
+.seat_msg{
+    width: 28%;
+    overflow: hidden;
+}
+.seat_msg .seat_cd{
+    background-color: #CBC9C9;
+    border-radius: 20px 0 0 20px;
+    padding: 30px 45px;
+    transform: translateX(-100%);
+    transition: .5s;
+}
+.seat_cd p{
+    font-weight: bold;
+    margin: 8px 25px 8px 5px;
+    color: #606060;
+}
+.seat_cd p:not(:first-child){
+    display: inline-block;
+}
+.seat_cd img{
+    display: inline-block;
+    width: 30px;
+    margin-right: 10px;
+}
+.btn_position{
+    width: 100%;
+    text-align: center;
+    margin-top: 59px;
+}
 
-/* booking footer */
+
+/*------booking footer-------*/
 footer.fr_booking{
     background: none;
     background-color: #333;

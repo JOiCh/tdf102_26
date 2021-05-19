@@ -240,6 +240,30 @@
                 </div>
             </div>
         </div>
+        <div class="bg_modal" id="modal">
+            <div class="close_circle" id="close"><i class="fal fa-times"></i></div>
+                <div class="modal_content">
+                    <div class="word">
+                        <div class="left">
+                            <img src="./img/info/food_producer.JPG" alt="">
+                            <p>Department of Marine Science</p>
+                            <p>Representative in charge Yasuyuki Kosaka</p>
+                        </div>
+                        <div class="right">
+                            <p>Message from the person in charge</p>
+                            <h4>Saba Kaido Delivery International Space Station!</h4>
+                            <p>We will provide mackerel developed by
+                                high school students from Wakasa Obama, Fukui Prefecture, which is the production center
+                                of mackerel. Fresh chub mackerel that can be used as sashimi is canned with soy sauce.
+                                With the support of Mr. Noguchi, astronauts, and JAXA, we high school students make it
+                                by hand with love. Please enjoy the space Japanese food delivered from Wakasa Saba
+                                Kaido.</p>
+                        </div>
+                    </div>
+                    <img src="./img/info/food_intro1.jpg" alt="">
+                    <img src="./img/info/01fd_cannedMacherelInSoySauce.jpg" alt="">
+                </div>
+        </div>
     </section>
     <footer>
         <div class="fr_content">
@@ -319,7 +343,15 @@
                 focusOnSelect: false
             });
 
-
+            //slider clicked
+            $('#modal').hide(); 
+            $('.slider .out a').click(function(event){
+                event.preventDefault();
+                $('#modal').show();  
+            });
+            $('#close').click(function(){
+                $('#modal').fadeOut();
+            });
         });
     </script>
 </body>

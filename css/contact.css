@@ -45,7 +45,6 @@ table tr:first-child {
 /* 表單 */
 form{
     position: relative;
-    border: 1px solid hotpink;
     width: 65%;
     margin:0 auto 40px auto;
 }
@@ -69,6 +68,20 @@ form .item input{
 }
 form .item input.ipt_name{
     width: 97%;
+}
+form input:focus, form select:focus{
+    border: 1px solid #8EDDF9;
+}
+
+/*input number消除旁邊箭頭*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+/* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
 }
 
 /* 表單內其餘樣式 */

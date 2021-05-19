@@ -40,6 +40,8 @@
     padding: 0px 50px;
     margin-right: 50px;
 }
+
+
 /*麵包屑*/
 .breadcrumb{
     padding: 20px 14%;
@@ -49,6 +51,8 @@
     display: inline-block;
     color:white
 }
+
+
 /*table*/
 table{
     margin:40px auto 0px auto;
@@ -62,6 +66,8 @@ table tr,table tr td{
 table tr td{
     border: 1px solid white;
 }
+
+
 /*價錢框*/
 .route{
     position: relative;
@@ -76,6 +82,8 @@ table tr td{
     font-size: 30px;
     color:white
 }
+
+
 /* booking footer */
 footer.fr_booking{
     background: none;

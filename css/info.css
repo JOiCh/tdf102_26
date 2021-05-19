@@ -112,3 +112,109 @@ article::after{
 .out a:hover div{
     transform: translateY(0%);
 }
+
+/*-------輪播內容點擊--------*/
+.bg_modal{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.85);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .1s;
+    z-index: 5;
+}
+.bg_modal .modal_content{
+    width: 800px;
+    height: 400px;
+    background-color: white;
+    overflow-y: auto;
+}
+
+/*內容右上關閉按鈕*/
+.bg_modal .close_circle{
+    width: 70px;
+    height: 70px; 
+    background-color: rgb(189, 189, 189);
+    border-radius: 100%;
+    position: absolute;
+    top: 35px;
+    right: 160px;
+    border: 1px solid #333;
+    text-align: center;
+}
+.bg_modal .close_circle i{
+    color: rgb(82, 82, 82);
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 70px;
+}
+.bg_modal .close_circle:hover{
+    opacity: .7;
+}
+
+/*文字內容*/
+.modal_content{
+    padding: 50px;
+}
+.modal_content .word{
+    margin: 0 auto 20px auto;
+    padding-left: calc((100% - 92% - 20px) / 2);
+}
+.modal_content .word .left, .modal_content .word .right{
+    margin: 10px;
+    display: inline-block;
+    vertical-align: top;
+}
+.modal_content .word .left{
+    width: 32%;
+}
+.modal_content .word .left p,.modal_content .word .right p{
+    color: #333;
+}
+.modal_content .word .left img{
+    width: 211px;
+}
+.modal_content .word .left img + p{
+    background-color: #447884;
+    font-size:12px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    padding: 5px 0;
+    margin: 10px 0;
+}
+.modal_content .word .right{
+    width: 60%;
+}
+.modal_content .word .right p:first-child{
+    color: rgb(201, 201, 201);
+    font-weight:bold ;
+    position: relative;
+}
+.word .right p:first-child::after{
+    content: "";
+    display: inline-block;
+    width: 40%;
+    position: absolute;
+    border-top: 2px solid rgb(201, 201, 201);
+    top:7px;
+    right: -7px;
+}
+.modal_content .word .right h4{
+    color: #447884;
+    margin: 20px 0;
+}
+
+/*介紹圖片*/
+.modal_content img {
+    width: 650px;
+    margin: 0 auto;
+}
+.modal_content .word + img{
+    margin-bottom: 20px;
+}
+
