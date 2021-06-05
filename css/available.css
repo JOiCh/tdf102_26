@@ -2,10 +2,14 @@
 @import 'form_booking.css';
 
 .available_sec1{
-    margin-top: 100px;
+    margin: 100px auto;
+    min-height: 100vh;
 }
 .available_sec1 h3{
     text-align: center;
+}
+.available_sec1 .shrink{
+    display: none;
 }
 .breadcrumb{
     padding: 20px 14%;
@@ -16,7 +20,31 @@
 .breadcrumb a,.breadcrumb i{
     display: inline-block;
 }
-
+@media (min-width:768px){
+    form{
+        display: flex !important;
+    }
+}
+@media (max-width:768px){
+    .available_sec1{
+        margin: 50px auto;
+    }
+    form{
+        display: none;
+    }
+    .available_sec1 .shrink{
+        display: block;
+        text-align: center;
+        margin-top: 50px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+}
+@media (max-width:575px){
+    .available_sec1 .shrink{
+        display: block;
+    }
+}
 /*table*/
 table{
     margin:40px auto;
@@ -38,6 +66,72 @@ table tr td{
 table tr:first-child {
     background-color: transparent;
 }
+table tr td h4{
+    display: none;
+}
+@media (min-width:576px) and (max-width:768px){
+    table{
+        margin: 15px;
+        display: block;
+        overflow-x: auto;
+    }
+    table tr,table tr td{
+        padding: 2px 12px;
+    }
+}
+@media (max-width:575px){
+    table{
+        width: 90%;
+        border: none;
+        display: block;
+        margin-top: 0;
+    }
+    table th,table tr:first-child{
+        display: none;
+    }
+    table tr,table tr td{
+        display: block;
+        padding: 6px 12px;
+    }
+    table tr{
+        width: 100%;
+        border: 1px solid white;
+        margin-bottom: 15px;
+    }
+    table tr td{
+        border: none;
+    }
+    table tr td + td {
+        border: 1px solid #666;
+    }
+    table tr td::before{
+        content: attr(data-th)' :  ';
+        color: #447884;
+        display: inline-block;
+        width: 9em;
+        text-align: right;
+        padding-right: 6px;
+    }
+    table tr td:last-child{
+        background-color: transparent;
+    }
+    table tr td:last-child::before{
+        display: none;
+    }
+    table tr td button{
+        display: block;
+        margin: 10px auto;
+    }
+    table tr td h4{
+        display: block;
+        font-size: 14px;
+        position: relative;
+        z-index: 2;
+    }
+    table tr td button:hover h4{
+        color: #FDD834;
+    }
+}
 
 /*客製submit*/
 table td:last-child{
@@ -54,6 +148,11 @@ table td:last-child{
 .tbl_btn button i{
     font-size:30px;
     color:white;
+}
+@media (max-width:575px){
+    .tbl_btn button i{
+        display: none;
+    }
 }
 
 /*submit滑過*/
@@ -88,6 +187,7 @@ table td:last-child{
 }
 /* booking footer */
 footer.fr_booking{
+    position: relative;
     background: none;
     background-color: #333;
     text-align: center;
@@ -96,6 +196,8 @@ footer.fr_booking{
     justify-content: center;
     align-items: center;
     padding: 30px 0;
+    bottom: 0;
+    left: 0;
 }
 footer.fr_booking a{
     font-weight: bold;

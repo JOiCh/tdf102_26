@@ -1,10 +1,18 @@
 @import 'layout.css';
 .pay_sec1{
     margin: 100px 0 120px 0;
+    /* min-height: 100vh; */
 }
-
 .pay_sec1 h3{
     text-align: center;
+}
+.pay_sec1>p{
+    display: none;
+}
+@media (max-width:768px){
+    .pay_sec1{
+        margin-top: 50px;
+    }
 }
 
 /* 麵包屑 */
@@ -38,6 +46,26 @@ table tr td{
 table tr:first-child {
     background-color: transparent;
 }
+
+@media (max-width:768px){
+    table{
+        display: none;
+    }
+    .pay_sec1{
+        margin-bottom: 120px;
+    }
+    .pay_sec1>p {
+        display: block;
+        text-align: center;
+    }
+}
+@media (max-width:575px){
+    .pay_sec1>p{
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
 
 /*總計*/
 .total_number{
@@ -94,6 +122,7 @@ table tr:first-child {
     left: -14px;
 }
 
+
 /* 卡片區 */
 .cards{
     width: 70%;
@@ -101,6 +130,7 @@ table tr:first-child {
     justify-content:space-around;
     margin: 20px auto;
     text-align: center;
+    cursor: pointer;
 }
 .cards .creditCard{
     border: 1px solid #707070;
@@ -116,10 +146,24 @@ table tr:first-child {
 .creditCard:hover{
     background-color: #8edcf931;
 }
+/* 卡片區斷點版 */
+@media (min-width:576px) and (max-width:768px){
+    .cards{
+        width: 90%
+    }
+}
+@media (max-width:575px){
+    .cards{
+        flex-wrap: wrap;
+    }
+    .cards .creditCard{
+        margin-top: 10px;
+    }
+}
 
 /* 表單區 */
 form{
-    width: 45%;
+    width: 53%;
     margin: 40px auto 50px auto;
     position: relative;
 }
@@ -131,6 +175,7 @@ form input, form select{
     border: 1px solid white;
     outline: none;
     margin-top: 15px;
+    /* position: relative; */
 }
 form input:focus, form select:focus{
     border: 1px solid #8EDDF9;
@@ -145,20 +190,44 @@ form .item{
     display: flex;
     margin-top: 10px;
 }
+
+/* 表單區斷點版 */
+@media (min-width:576px) and (max-width:768px){
+    form{
+        width: 90%;
+    }
+}
+@media (max-width:575px){
+    form{
+        width: 90%;
+    }
+}
+
 .item:nth-of-type(1) input{
-    width: calc( 80% / 4 );
+    width: calc( 79.5% / 4 );
     margin-right: 3px;
 }
+.item:nth-of-type(2) label{
+    width:100%
+}
 .item:nth-of-type(2) input{
-    width: 32rem;
+    width: 91.5%;
+}
+.item:nth-of-type(3) label:nth-of-type(1){
+    width: 66.666666%;
+}
+.item:nth-of-type(3) .select_month,.item:nth-of-type(3) .select_year{
+    width: 39%;
+    margin-right: 10.3%;
+}
+.item:nth-of-type(3) label:last-of-type{
+    width: 33.333333%;
 }
 .item:nth-of-type(3) select{
-    width:10rem;
-    margin-right: 20px;
+    width: 100%;
 }
 .item:nth-of-type(3) input{
-    width:9.3rem;
-    display: inline-block;
+    width: 74.5%;
 }
 .select_month, .select_year{
     position: relative;
@@ -166,15 +235,80 @@ form .item{
 }
 .select_month span, .select_year span{
     position: absolute;
-    top:33px;
-    left:53px;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, 0%);
     font-weight: bold;
 }
 form button{
     position: absolute;
-    right: -75px;
-    bottom: -95px;
+    right: 0;
+    bottom: -70px;
 }
+@media (min-width:576px) and (max-width:768px){
+    .item:nth-of-type(1) input{
+        width:calc( 65% / 4 ); ;
+    }
+    .item:nth-of-type(2) input{
+        width: 77%;
+    }
+    .item:nth-of-type(3) label:nth-of-type(1){
+        width: calc(51.3333333% + 46px);
+    }
+    .item:nth-of-type(3) label:last-of-type{
+        width: 25.6666667%;
+    }
+    .item:nth-of-type(3) select{
+        width: 100%;
+    }
+    .item:nth-of-type(3) input{
+        width: 74.5%;
+    }
+    form button{
+        display: block;
+        right: 0;
+        bottom: 0;
+    }
+}
+@media (max-width:575px){
+    form input, form select{
+        padding: 5px;
+    }
+    .item:nth-of-type(1) input{
+        width:calc( (100% - 81px) / 4 );
+    }
+    .item:nth-of-type(1) input:last-of-type{
+        margin-right: 0;
+    }
+    .item:nth-of-type(2) input,.item:nth-of-type(2) label{
+        width: 100%
+    }
+    .item:nth-of-type(3) label:nth-of-type(1){
+        width: 65%;
+        display: inline-block;
+    }
+    .item:nth-of-type(3) label:last-of-type{
+        display: inline-block;
+        width: 33%;
+    }
+    .item:nth-of-type(3) .select_month, .item:nth-of-type(3) .select_year{
+        margin-right: 10%;
+    }
+    .item:nth-of-type(3) {
+        display: block;
+    }
+    .item:nth-of-type(3) select{
+        width: 100%;
+    }
+    .item:nth-of-type(3) input{
+        width: 100%;
+    }
+    form button{
+        right: 0px;
+        bottom: -70px;
+        }
+}
+
 /*input number消除旁邊箭頭*/
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -192,9 +326,16 @@ form select{
     background-repeat: no-repeat;
     background-position: right 10px bottom 10px;
 }
+@media (max-width:575px){
+    form select{
+        background-position: right 2px bottom 3px;
+    }
+}
+
 
 /* booking footer */
 footer.fr_booking{
+    position: relative;
     background: none;
     background-color: #333;
     text-align: center;
@@ -203,6 +344,8 @@ footer.fr_booking{
     justify-content: center;
     align-items: center;
     padding: 30px 0;
+    bottom: 0;
+    left: 0;
 }
 footer.fr_booking a{
     font-weight: bold;

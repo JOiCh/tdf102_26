@@ -1,25 +1,66 @@
 @import 'layout.css';
 main{
     width: 100%;
-    height: 240vh;
     position: relative;
-    /* border: 1px solid red; */
+    border: 1px solid red;
     overflow: hidden;
+}
+.planet_list{
+    width: 75%;
+    display: flex;
+    margin: 50px auto 0 auto;
+    display: flex;
+    justify-content: space-between;
+    display: none;
+}
+.planet_item{
+    width: calc( 100% / 4 );
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    font-weight: bold;
+    background-size: cover;
+    text-shadow: 0px 0px 3px #333;
+    cursor: pointer;
+}
+.planet_item:first-child{
+    background-image: url(../img/route/moon/clkMoon.jpg);
+}
+.planet_item:nth-child(2){
+    background-image: url(../img/route/mars/clkMars.png);
+}
+.planet_item:nth-child(3){
+    background-image: url(../img/route/jupiter/clkJuniper.jpg);
+}
+.planet_item:last-child{
+    background-image:url(../img/route/saturn/clkSaturn.png);
+}
+.planet_item:hover{
+    opacity: .8;
+}
+@media (max-width:768px){
+    .planet_list{
+        display: flex;
+    }
+}
+@media (max-width:575px){
+    .planet_list{
+        width: 90%;
+    }
 }
 
 /*介紹文字區*/
 .introWord {
-    position: absolute;
-    /* border: 1px solid hotpink; */
+    border: 1px solid hotpink;
+    margin-top: 100px;
     width: 75%;
-    min-width: 900px;
     top:0px;
     left: 0px;
     transform: translate(50% 50%);
     margin-left: 130px;
     padding: 8px 16px;
     display: none;
-    transition: opacity .5s, top 1.5s;
+    transition: all .5s;
 }
 
 .introWord--show{
@@ -28,7 +69,7 @@ main{
 }
 .wordBox{
     width: 50%;
-    /* border: 1px solid blue; */
+    border: 1px solid blue;
     margin: 0 auto;
     margin-bottom: 30px;
 }
@@ -73,7 +114,7 @@ main{
     margin: 2.2rem 0;
 }
 .row{
-    /* border: 1px solid green; */
+    border: 1px solid green;
     width: 77%;
     margin: 0 auto;
     display: flex;
@@ -101,8 +142,79 @@ main{
 }
 
 .row .word{
-    /* border: 1px solid white; */
+    border: 1px solid white;
     margin-left: 10px;
+}
+
+@media (min-width:576px) and (max-width:768px){
+    .introWord{
+        margin: 0 auto;
+        margin-top: 50px;
+        padding: 0;
+    }
+    .wordBox{
+        width: 100%;
+    }
+    .gragh_box{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .gragh_box .gbox {
+        margin: 10px 3% 10px 3%;
+        width: 40%;
+    }
+    .row{
+        width: 100%;
+        flex-wrap: wrap;
+        padding-top: 0;
+    }
+    .row .word{
+        width: 80%;
+    }
+    .row:last-of-type{
+        margin-bottom: 50px;
+    }
+    .row img{
+        width: 80%;
+        margin-top: 15px;
+    }
+}
+@media (max-width:575px){
+    .introWord{
+        margin: 50px auto 50px auto;
+        padding: 0;
+        width: 100%;
+    }
+    .wordBox{
+        width: 90%;
+    }
+    .gragh_box{
+        margin: 0;
+        padding: 0 4.5%;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .gragh_box .gbox{
+        width: 40%;
+        height: 9rem;
+        margin-bottom: 15px;
+    }
+    .gbox h4,.gbox:nth-of-type(1) h4 {
+        margin: 1rem 0;
+    }
+    .row{
+        width: 100%;
+        flex-wrap: wrap;
+        padding-top: 0;
+    }
+    .row .word{
+        margin: 0 auto 15px auto;
+    }
+    .row img{
+        width: 100%;
+    }
 }
 
 /*圓形輪播!!!絕對不可以刪*/
@@ -118,6 +230,7 @@ main{
     top:-70px;
     transform: translateY(-50px);
     transition: transform .5s;
+    cursor: pointer;
 }
 .circle-carousel__item{
     width: 150px; 
@@ -143,3 +256,9 @@ main{
     transition: transform .5s;
 }
 
+@media (max-width:768px){
+    .circle-carousel{
+       display: none;
+    } 
+
+}

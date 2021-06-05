@@ -10,10 +10,10 @@ article {
     width: 80%;
     height: 250px;
     margin: 100px auto 30px auto;
-    
+    border: 1px solid blue;
 }
 article:nth-of-type(1) img{
-    max-height: 250px;
+    height: 250px;
     float: right;
     shape-outside: url(../img/info/station.png);
     shape-margin: 1.5em
@@ -28,7 +28,7 @@ article:nth-of-type(2){
 }
 
 article:nth-of-type(2) img{
-    max-height: 250px;
+    height: 250px;
     float: left;
     shape-outside: url(../img/info/spacebed.png);
     shape-margin: 1.5em
@@ -45,6 +45,61 @@ article::after{
     clear: both;
 
 }
+/*上半部平板版*/
+@media (min-width:401px) and (max-width:768px){
+    article {
+        width: 100%;
+        height: 250px;
+        padding: 30px;
+    }
+    article h3{
+        text-shadow: 0px 0px 4px #333;
+    }
+    article:nth-of-type(1){
+        margin: 40px auto 15px auto;
+        background-image: url(../img/info/station2.JPG);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    article:nth-of-type(1) img,article:nth-of-type(2) img{
+       display: none;
+    }
+    article:nth-of-type(2){
+        margin: 0 auto 40px auto;
+        background-image: url(../img/info/spaceBed2.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+   
+    article .word p.long{
+        display: none;
+    }
+}
+/*上半部手機版*/
+@media (max-width:400px){
+    article {
+        width: 90%;
+        height: 57vh;
+    }
+    article:nth-of-type(1){
+        margin: 20px auto 25px auto;
+        background-image: url(../img/info/station2.JPG);
+        background-position: bottom;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    article:nth-of-type(2){
+        margin: 0 auto 40px auto;
+        background-image: url(../img/info/spaceBed2.jpg);
+        background-position: bottom;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    article img{
+        display: none;
+    }
+}
+
 
 /*輪播上半圓*/
 .up{
@@ -62,7 +117,10 @@ article::after{
 .info_sec2 .down{
     background-color: #447884;
     width: 100%;
+}
 
+@media (max-width:575px){
+    .up{transform: translateY(2px);}
 }
 
 /*輪播本人*/
@@ -89,6 +147,24 @@ article::after{
 .slick-prev{
     transform: translateX(-15px) translateY(-175%);
 }
+/*輪播平板版*/
+@media (min-width:576px) and (max-width:768px){
+    .info_sec2 h2{
+        font-size: 9.5vw;
+        top: 40%;
+    }
+}
+@media (max-width:575px){
+    .info_sec2 h2{
+        font-size: 9.5vw;
+        top: 40%;
+    }
+    .info_sec2 .down{
+        margin-bottom: 40px;
+    }
+}
+
+
 /*輪播滑過效果*/
 .out a{
     width: 100%;
@@ -112,7 +188,11 @@ article::after{
 .out a:hover div{
     transform: translateY(0%);
 }
-
+@media (max-width:575px){
+    .out a>div{
+        transform: translateY(0%);
+    }
+}
 /*-------輪播內容點擊--------*/
 .bg_modal{
     width: 100%;
@@ -132,6 +212,7 @@ article::after{
     height: 400px;
     background-color: white;
     overflow-y: auto;
+    padding: 50px;
 }
 
 /*內容右上關閉按鈕*/
@@ -145,6 +226,7 @@ article::after{
     right: 160px;
     border: 1px solid #333;
     text-align: center;
+    cursor: pointer;
 }
 .bg_modal .close_circle i{
     color: rgb(82, 82, 82);
@@ -157,9 +239,6 @@ article::after{
 }
 
 /*文字內容*/
-.modal_content{
-    padding: 50px;
-}
 .modal_content .word{
     margin: 0 auto 20px auto;
     padding-left: calc((100% - 92% - 20px) / 2);
@@ -207,6 +286,69 @@ article::after{
 .modal_content .word .right h4{
     color: #447884;
     margin: 20px 0;
+}
+/*popup平板版*/
+@media (min-width:576px) and (max-width:768px){
+    .bg_modal .modal_content{
+        width: 80%;
+        padding: 20px;
+    }
+    .bg_modal .close_circle{
+        width: 55px;
+        height: 55px;
+        top:40px;
+        right: 20px; 
+    }
+    .bg_modal .close_circle i{
+        font-size: 30px;
+        line-height: 55px;
+    }
+    .modal_content .word .left{
+        width: 28%;
+    }
+    .modal_content .word .left img{
+        max-width: 100%;
+    }
+    .word .right p:first-child::after{
+        width: 25%;
+        right: -2px;
+    }
+    .modal_content img {
+        max-width: 88%;
+    }
+}
+/*popup手機版*/
+@media (max-width:575px){
+    .bg_modal .modal_content{
+        width: 95%;
+        padding: 10px;
+    }
+    .bg_modal .close_circle{
+        width: 45px;
+        height: 45px;
+        top:40px;
+        left:50%;
+        transform: translateX(-50%);
+    }
+    .bg_modal .close_circle i{
+        font-size: 25px;
+        line-height: 45px;
+    }
+    .modal_content .word .left,.modal_content .word .right{
+        display: inline-block;
+    }
+    .modal_content .word .right{
+        width: 56%;
+    }
+    .word .right p:first-child::after{
+        display: none;
+    }
+    .modal_content .word .left img{
+        max-width: 100%;
+    }
+    .modal_content img {
+        max-width: 88%;
+    }
 }
 
 /*介紹圖片*/

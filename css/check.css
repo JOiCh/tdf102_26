@@ -1,12 +1,18 @@
 @import 'layout.css';
+*{outline: 1px solid red;}
 .check_sec1{
-    margin: 100px 0 100px 0;;
+    margin: 100px 0 100px 0;
+    min-height: 100vh;
 }
 .check_sec1 h3{
     text-align: center;
 }
 main{
     width: 720px;
+    margin: 0 auto;
+}
+main .shrink{
+    display: none;
 }
 main p{
     margin-left: 11px;
@@ -21,6 +27,22 @@ main p{
 .btn_position button{
     margin-right: 13px;
 }
+@media(max-width:768px){
+    .check_sec1{
+        margin: 50px auto;
+    }
+    main{
+        width: 80%;
+    }
+    main .shrink{
+        display: block;
+        margin: 20px;
+    }
+    table{
+        display: none;
+    }
+}
+
 
 /* 麵包屑 */
 .breadcrumb{
@@ -56,6 +78,7 @@ table tr:first-child {
 
 /* booking footer */
 footer.fr_booking{
+    position: relative;
     background: none;
     background-color: #333;
     text-align: center;
@@ -64,6 +87,8 @@ footer.fr_booking{
     justify-content: center;
     align-items: center;
     padding: 30px 0;
+    bottom: 0;
+    left: 0;
 }
 footer.fr_booking a{
     font-weight: bold;

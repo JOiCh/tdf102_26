@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="./css/about.css">
-   
+
 </head>
 
 <body>
@@ -50,16 +50,31 @@
                 </a>
             </li>
         </ul>
+        <button class="hamburger hamburger--collapse" type="button">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </button>
     </header>
+    <aside id="menu">
+        <ul>
+            <li><a href="news.html">NEWS</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="info.html">INFORMATION</a></li>
+            <li><a href="route.html">ROUTE</a></li>
+            <li><a href="booking.html">BOOKING</a></li>
+        </ul>
+    </aside>
+    <div class="bg_menu">
+    </div>
     <section class="abt_sec1">
         <div>
             <main>
                 <div class="box_video">
+                    <h2>ABOUT</h2>
                     <video src="./video/launch.webm" id="video" muted loop autoplay playsinline>
-                        <!-- <source src="https://alldata.sgp1.digitaloceanspaces.com/videos/sample.mp4" type="video/mp4"> -->
                     </video>
                 </div>
-                <h2>ABOUT</h2>
                 <div class="content">
                     <h4>THE FIRST AND THE MOST- SPACE TRIP</h4>
                     <h3>SPACEZ TO LAUNCH INSPIRATION4 MISSION TO ORBIT</h3>
@@ -73,76 +88,74 @@
         </div>
     </section>
     <section class="abt_sec2">
-        <div>
-            <h4>THE SPACESHIP</h4>
-            <div class="box_cards">
-                <div class="card">
-                    <div class="bg_img">
-                        <img src="./img/about/ship_dragon.png" alt="">
-                    </div>
-                    <p>DRAGON</p>
-                    <p>SENDING HUMANS AND CARGO INTO SPACE</p>
-                    <a href="">
-                        READ MORE&nbsp&nbsp<i class="fas fa-chevron-right arrow"></i><i
-                            class="fas fa-chevron-right arrow_fixed"></i>
-                    </a>
+        <h4>THE SPACESHIP</h4>
+        <div class="box_cards">
+            <div class="card">
+                <div class="bg_img">
+                    <img src="./img/about/ship_dragon.png" alt="">
+                </div>
+                <p>DRAGON</p>
+                <p>SENDING HUMANS AND CARGO INTO SPACE</p>
+                <a href="">
+                    READ MORE&nbsp&nbsp<i class="fas fa-chevron-right arrow"></i><i
+                        class="fas fa-chevron-right arrow_fixed"></i>
+                </a>
 
-                </div>
-                <div class="card">
-                    <div class="bg_img">
-                        <img src="./img/about/ship_falcon.png" alt="">
-                    </div>
-                    <p>FALCON</p>
-                    <p>FIRST ORBITAL CLASS ROCKET CAPABLE OF REFLIGHT</p>
-                    <a href="">
-                        READ MORE&nbsp&nbsp<i class="fas fa-chevron-right arrow"></i><i
-                            class="fas fa-chevron-right arrow_fixed"></i>
-                    </a>
-                </div>
-                <div class="card">
-                    <div class="bg_img">
-                        <img src="./img/about/ship_starship.png" alt="">
-                    </div>
-                    <p>STARSHIP</p>
-                    <p>FIRST ORBITAL CLASS ROCKET CAPABLE OF REFLIGHT</p>
-                    <a href="">
-                        READ MORE&nbsp&nbsp<i class="fas fa-chevron-right arrow"></i><i
-                            class="fas fa-chevron-right arrow_fixed"></i>
-                    </a>
-                </div>
             </div>
-            <h4>THE ASTRONAUTS</h4>
-            <div class="box_men">
-                <a href="" class="men_img">
-                    <div class="box_img">
-                        <img src="./img/about/man_mikeHpkins.JPG" alt="">
-                    </div>
-                    <p>Mike Hopkins</p>
-                </a>
-                <a href="" class="men_img">
-                    <div class="box_img">
-                        <img src="./img/about/man_shannonWalker.JPG" alt="">
-                    </div>
-                    <p>Shannon Walker</p>
-                </a>
-                <a href="" class="men_img">
-                    <div class="box_img">
-                        <img src="./img/about/man_soichiNoguchi.JPG" alt="">
-                    </div>
-                    <p>Soichi Noguchi</p>
-                </a>
-                <a href="" class="men_img">
-                    <div class="box_img">
-                        <img src="./img/about/man_victorGlover.JPG" alt="">
-                    </div>
-                    <p>Victor Glover</p>
+            <div class="card">
+                <div class="bg_img">
+                    <img src="./img/about/ship_falcon.png" alt="">
+                </div>
+                <p>FALCON</p>
+                <p>FIRST ORBITAL CLASS ROCKET CAPABLE OF REFLIGHT</p>
+                <a href="">
+                    READ MORE&nbsp&nbsp<i class="fas fa-chevron-right arrow"></i><i
+                        class="fas fa-chevron-right arrow_fixed"></i>
                 </a>
             </div>
-            <div class="box_btn">
-                <button class="btn_level3">
-                    <a href="">VIEW MORE</a>
-                </button>
+            <div class="card">
+                <div class="bg_img">
+                    <img src="./img/about/ship_starship.png" alt="">
+                </div>
+                <p>STARSHIP</p>
+                <p>FIRST ORBITAL CLASS ROCKET CAPABLE OF REFLIGHT</p>
+                <a href="">
+                    READ MORE&nbsp&nbsp<i class="fas fa-chevron-right arrow"></i><i
+                        class="fas fa-chevron-right arrow_fixed"></i>
+                </a>
             </div>
+        </div>
+        <h4>THE ASTRONAUTS</h4>
+        <div class="box_men">
+            <a href="" class="men_img">
+                <div class="box_img">
+                    <img src="./img/about/man_mikeHpkins.JPG" alt="">
+                </div>
+                <p>Mike Hopkins</p>
+            </a>
+            <a href="" class="men_img">
+                <div class="box_img">
+                    <img src="./img/about/man_shannonWalker.JPG" alt="">
+                </div>
+                <p>Shannon Walker</p>
+            </a>
+            <a href="" class="men_img">
+                <div class="box_img">
+                    <img src="./img/about/man_soichiNoguchi.JPG" alt="">
+                </div>
+                <p>Soichi Noguchi</p>
+            </a>
+            <a href="" class="men_img">
+                <div class="box_img">
+                    <img src="./img/about/man_victorGlover.JPG" alt="">
+                </div>
+                <p>Victor Glover</p>
+            </a>
+        </div>
+        <div class="box_btn">
+            <button class="btn_level3">
+                <a href="">VIEW MORE</a>
+            </button>
         </div>
     </section>
     <footer>
@@ -193,7 +206,7 @@
                 <a href=""><i class="fab fa-instagram"></i></a>
                 <a href=""></i><i class="fab fa-google-plus-g"></i></a>
             </div>
-        
+
             <div class="fr_p">This website is the 68th special work of the students of the TibaMe front-end design
                 engineer class of Weiyu TibaMe. This platform is for learning and display purposes only. If you have
                 concerns about infringement, you can send a private message to [TibaMe-Front-end Design Engineer

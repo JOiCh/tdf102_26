@@ -1,3 +1,4 @@
+@import url(../vendors/hamburgers.css);
 * {
     box-sizing: border-box;
     margin: 0px;
@@ -21,20 +22,13 @@ body a {
     color: white;
 }
 
-main,
-section>div,
-.fr_content {
-    width: 1200px;
-    margin: 0 auto;
-}
-
 section img,
 section a {
     display: block;
 }
 section h2{
     font-family:'h2';
-    font-size: 120px;
+    font-size: 9.5vw;
     color: white;
 }
 section h3 {
@@ -58,7 +52,25 @@ button a {
     font-weight: bold;
     padding: 15px 20px;
 }
-
+/*字體斷點*/
+@media (min-width:768px) and (max-width:991px){
+    section h3{
+        font-size: 32px;
+    }
+}
+@media (max-width:768px){
+    section h3{
+        font-size: 28px;
+    }
+    section h2{
+        font-size: 78px;
+    }
+}
+@media (max-width:575px){
+    section h2{
+        font-size: 48px;
+    }
+}
 /*第一級buton*/
 .btn_level1 {
     background-color: #FDD834;
@@ -122,7 +134,6 @@ button a {
 /*----------header區----------*/
 header {
     width: 100%;
-    min-width: 1200px;
     background-color: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(5px);
     height: 80px;
@@ -139,7 +150,7 @@ header {
 
 header ul {
     display: flex;
-    /*讓li橫向排列*/
+    border:1px solid red
 }
 
 header img {
@@ -148,6 +159,7 @@ header img {
 }
 
 header li a {
+    border: 1px solid yellow;
     font-size: 14px;
     font-weight: bold;
     color: white;
@@ -177,10 +189,97 @@ header li a .absolute {
     width: 100%;
     height: 100%;
 }
+/*漢堡按鈕*/
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after{
+    background-color:white
+}
+.hamburger.is-active .hamburger-inner, .hamburger.is-active .hamburger-inner::before, .hamburger.is-active .hamburger-inner::after{
+    background-color:white
+}
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after{
+    width: 20px;
+    height: 2px;
+}
+header button.hamburger{
+    border: 1px solid blue;
+    position: absolute;
+    right:10px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 9 !important;
+    display: none;
+}
+.hamburger-box{
+    width: 20px;
+    height: 16px;
+}
+.hamburger-inner::before{
+    top:-7px;
+}
+.hamburger--collapse .hamburger-inner::after{
+    top:-14px;
+}
+/*響應式header*/
+@media (max-width:1199px){
+    header{
+        height: 60px;
+    } 
+    header img{
+        margin-right: 0px;
+    }
+}
+@media (max-width:991px){
+    header ul {
+        display: none;
+    }
+    header button.hamburger{
+        display: block;
+    }
+}
+/*側邊選單區*/
+.bg_menu{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: rgb(2, 2, 2,0.3);
+    z-index: 3;
+    transition: all 2s;
+    display: none;
+    /* z-index: 0; */
+}
+aside{
+    width: 300px;
+    height: 100%;
+    padding-top: 80px;
+    background-color: black;
+    position: fixed;
+    right: 0;
+    top: 0px;
+    transform: translateX(100%);
+    z-index: 4;
+    transition: all 1s;
+}
+aside ul{
+    list-style-type: none;
+    text-align: right;
+    margin-right: 25px;
+}
+aside ul a{
+    padding: 10px 0;
+    display: block;
+}
+/*響應式侧選單toggle*/
+#menu.slide_right {
+    transform: translateX(0);
+}
+.bg_menu.bg_show{
+    display: block !important;
+}
 /*----------footer----------*/
 footer {
     width: 100%;
-    min-width: 1200px;
     padding-top: 10px;
     padding-bottom: 40px;
     background-image: url(../img/index/bg_footer.jpg);
@@ -213,17 +312,19 @@ footer .fr_top p {
 }
 
 .fr_top .email {
-    width: 40%;
+    width: 35%;
+    position: relative;
 }
 
 .fr_top input {
-    width: 70%;
+    width: 100%;
     background-color: rgba(255, 255, 255, 0.3);
     padding: 10px 10px;
     border: 1px solid #8EDDF9;
     border-radius: 30px;
     outline: none;
     color: white;
+   
 }
 
 .fr_top button {
@@ -233,11 +334,14 @@ footer .fr_top p {
     border: none;
     background-color: #8EDDF9;
     border: 1px solid #8EDDF9;
-    transform: translateX(-100%);
+    /* transform: translateX(-100%); */
     cursor: pointer;
     color: white;
     font-weight: bold;
     transition: .5s;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 
 /*subscribe動畫class*/
@@ -282,4 +386,74 @@ footer .fr_p {
     width: 60%;
     margin: 0 auto;
     text-align: center;
+}
+@media (min-width:992px) and (max-width:1199px){
+    footer .fr_top{
+        margin-bottom: 0px;
+        padding: 0px;
+    }
+    footer .fr_list>ul{
+        margin-top: 10px;
+    }
+}
+@media (max-width:991px){
+    footer .fr_top img{
+        display: none;
+    }
+    footer .fr_top{
+        margin-bottom: 0px;
+        padding: 0px;
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+    }
+    footer .fr_top p,.fr_top .email{
+        display: inline-block;
+    }
+    footer .fr_list>ul{
+        margin-top: 10px;
+        padding-left: 0;
+        padding-right:0;
+        width: 80%;
+        margin: 0 auto;
+    }
+    .fr_top .email{
+        width: 35%;
+    }
+    footer .fr_p{
+        width:80%;
+    }
+}
+@media (min-width:576px) and (max-width:768px){
+    footer .fr_top p,.fr_top .email{
+        display:block;
+    }
+    .fr_top .email{
+        margin: 0 auto;
+        width: 50%;
+    }
+    footer .fr_list>ul,footer .fr_p{
+        width: 90%;
+    }
+}
+@media (max-width:575px){
+    footer{
+        background-size: cover;
+    }
+    footer .fr_top .email{
+        width: 90%;
+        margin-bottom: 10px;
+    }
+    footer .fr_list>ul{
+        text-align: center;
+    }
+    footer .fr_list li a{
+        font-size: 12px;
+    }
+    footer .fr_list ul li li{
+        display: none;
+    }
+    footer .fr_p{
+        width: 90%;
+    }
 }

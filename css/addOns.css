@@ -1,9 +1,19 @@
 @import "layout.css";
+*{border: 1px solid yellow;}
+
 .addOns_sec1{
-    margin-top: 100px;
+    margin: 100px auto;
+}
+@media (max-width:768px){
+    .addOns_sec1{
+        margin: 50px auto;
+    }
 }
 .addOns_sec1 h3{
     text-align: center;
+}
+main>p {
+    display: none;
 }
 .add_list .item{
     margin: 15px 0px;
@@ -40,7 +50,15 @@
     padding: 0px 50px;
     margin-right: 50px;
 }
-
+.check button{
+    align-self: flex-end;
+}
+@media (max-width:768px){
+    .check p{
+        width: 100%;
+        padding: 0px;
+    }
+}
 
 /*麵包屑*/
 .breadcrumb{
@@ -55,7 +73,6 @@
 
 /*table*/
 table{
-    margin:40px auto 0px auto;
     border-collapse:separate;
     border-spacing:10px 15px;
 }
@@ -72,20 +89,34 @@ table tr td{
 .route{
     position: relative;
     display: flex;
+    justify-content: center;
 }
 .price{
-    position: absolute;
-    bottom: 15px;
-    right: 10%;
+    align-self: center;
 }
 .price h3{
     font-size: 30px;
     color:white
 }
-
+@media (max-width:768px){
+    .route{
+        display: none;
+    }
+    main>p {
+        display: block;
+        text-align: center;
+    }
+}
+@media (max-width:575px){
+    main>p{
+        width: 80%;
+        margin: 0 auto;
+    }
+}
 
 /* booking footer */
 footer.fr_booking{
+    position: relative;
     background: none;
     background-color: #333;
     text-align: center;
@@ -94,6 +125,8 @@ footer.fr_booking{
     justify-content: center;
     align-items: center;
     padding: 30px 0;
+    bottom: 0;
+    left: 0;
 }
 footer.fr_booking a{
     font-weight: bold;
@@ -109,13 +142,21 @@ footer.fr_booking span{
     width: 72%;
     margin: 20px auto;
 }
-
+@media (max-width:575px){
+    .add_list{
+        width: 95%;
+        border: 1px solid salmon;
+    }
+}
 /*checkbox換圖*/
 .checkbox,.cge_checkbox{
     cursor: pointer;
 }
 .cge_checkbox[type="checkbox"]{
     display: none;
+}
+.above .checkbox{
+    position: relative;
 }
 .above .checkbox::before{
     content: "";
@@ -131,6 +172,20 @@ footer.fr_booking span{
     background-image: url(../img/icon/checkbox.svg);
     transition: .2s;
 }
+.above .checkbox span{
+    width: 15rem;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-35%);
+}
+@media (max-width:768px){
+    .above .checkbox::before{
+        margin: 15px 6px 15px auto;
+        display: inline-block;
+    }
+}
+
 /* 右邊的價格 */
 .above{
     display: flex;
@@ -166,10 +221,9 @@ footer.fr_booking span{
 .radioBox .radio input,.radioBox .radio label{
     display: inline-block;
     vertical-align: middle;
-    
 }
-/* radio換圖*/
 
+/* radio換圖*/
 .radio input[type="radio"]{
     display: none;
 }
@@ -193,6 +247,7 @@ footer.fr_booking span{
     font-size: 20px;
     cursor: pointer
 }
+
 /* 保險項目input*/
 .no5{
     position: relative;
@@ -214,6 +269,28 @@ footer.fr_booking span{
     left: 16%;
     top:0px
 }
+@media (max-width:768px){
+    .no5::after{
+        left: 28%;
+        top:18px
+    }
+    .no5 .add_price{
+        left: 26%;
+        top:18px
+    }
+}
+@media (max-width:575px){
+    .no5::after{
+        left: 40%;
+        top:18px
+    }
+    .no5 .add_price{
+        left: 38%;
+        top:18px;
+        width: 50%;
+    }
+}
+
 .no5 .add_price input{
     appearance: none;
     outline: none;
@@ -223,8 +300,8 @@ footer.fr_booking span{
     color: white;
     border: none;
     padding-bottom: 10px;
-
 }
+
 /*input number消除旁邊箭頭*/
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {

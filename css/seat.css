@@ -1,13 +1,24 @@
 @import 'layout.css';
-
+/* *{outline: 1px solid red;} */
 /*-------上方區-------*/
 .seat_sec1{
-    margin: 100px 0 100px 0;;
+    margin: 100px 0;
+    min-height: 100vh;
 }
 .seat_sec1 h3{
     text-align: center;
 }
-
+.seat_sec1 main > p{
+    display: none;
+}
+.seat_sec1 main .btn_position2{
+    display: none;
+}
+@media (max-width:768px){
+    .seat_sec1{
+        margin: 50px auto 0 auto;
+    }
+}
 
 /*table*/
 table{
@@ -30,15 +41,34 @@ table tr td{
 table tr:first-child {
     background-color: transparent;
 }
-
+@media (max-width:768px){
+    main{
+        width: 95%;
+        margin: 0 auto;
+    }
+    .seat_sec1 main > p{
+        display: block;
+        text-align: center;
+    }
+    table{
+        display: none;
+    }
+}
+@media (max-width:575px){
+    main{
+        width:100%
+    }
+    .seat_sec1 main > p{
+        width: 90%;
+        margin: 0 auto;
+    }
+}
 
 /*------內容區-------*/
 .content{
     display: flex;
     justify-content: space-between;
-    width: 100%;
     margin: 20px 0 0 30px;
-    
 }
 .content .hello{
     align-self: flex-start;
@@ -65,18 +95,49 @@ table tr:first-child {
     font-size: 16px;
 }
 
+@media(min-width:576px) and (max-width:768px){
+    .content{
+        display: block;
+        margin: 0 auto;
+        padding: 15px 20px;
+    }
+    .content .hello{
+        width: 100%;
+    }
+}
+@media(max-width:575px){
+    .content{
+        display: block;
+        margin: 0 auto;
+    }
+    .content .hello{
+        width: 90%;
+        margin: 20px auto;
+    }
+    .seat_sec1 main .btn_position2{
+        display: block;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+}
+
 /*svg*/
 .svg{
     width: 359px;
     height: 350px;
     overflow: auto;
 }
-.img_svg{
-    width: 100%;
-}
+
 .cls-2:hover{
     fill:#FDD834;
     cursor: pointer;
+ 
+}
+.cls-2:hover + .cls-3{
+    fill: #FFF;
+}
+.cls-3{
+    pointer-events: none;
 }
 .-un{
     stroke: #606060 !important;
@@ -84,16 +145,34 @@ table tr:first-child {
     cursor: not-allowed !important;
 }
 
-/*座位示意圖*/
-.seat_msg{
-    width: 28%;
-    overflow: hidden;
+@media (min-width:576px) and (max-width:768px){
+    .svg{
+        overflow: unset;
+        height: auto;
+        margin: 50px 6% 50px 0;
+        width: 52%;
+    }
 }
-.seat_msg .seat_cd{
+@media (max-width:575px){
+    .svg{
+        height: auto;
+        margin: 40px auto;
+        width: 88%;
+    }
+}
+
+/*座位示意圖*/
+.seat_msg1{
+    display: none;
+}
+.seat_msg2,.seat_msg1{
+    width: 28%;
+}
+.seat_msg2 .seat_cd,.seat_msg1 .seat_cd{
     background-color: #CBC9C9;
     border-radius: 20px 0 0 20px;
     padding: 30px 45px;
-    transform: translateX(-100%);
+    transform: translateX(100%);
     transition: .5s;
 }
 .seat_cd p{
@@ -115,9 +194,143 @@ table tr:first-child {
     margin-top: 59px;
 }
 
+@media (min-width:576px) and (max-width:768px){
+    .seat_msg2, .svg{
+        display: inline-block;
+        vertical-align: top;
+    }
+    .seat_msg2{
+        width: calc(40% + 3px);
+        margin: 50px 0;
+    }
+    .seat_msg2 .seat_cd{
+        padding: 30px 25px;
+    }
+}
+@media (max-width:575px){
+    .seat_msg2{
+        display: none;
+    }
+    .seat_msg1{
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+    }
+    .seat_msg1 .seat_cd{
+        padding: 20px 20px;
+        border-radius: 0px;
+        margin-top: 40px;
+    }
+    .seat_msg1 .seat_cd img{
+        width: 20px;
+    }
+    .seat_cd p{
+        margin: 8px 10px 8px 4px;
+    }
+    .seat_cd p:last-of-type{
+        margin-right:0;
+    }
+}
 
+/*------確認座位區------*/
+ .seat_bg{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.85);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 2s;
+    z-index: 5;
+}
+.seat_bg .seat_box{
+    width: 40%;
+    background-color: white;
+    padding: 30px 0px ;
+    color: #333;
+}
+.seat_bg .seat_box h4{
+    border-bottom: 2px dashed rgb(192, 192, 192);
+    padding:0 0 30px 20px;
+}
+
+.seat_box h4+p{
+    border-bottom:1px solid #333;
+    padding: 20px 0 20px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #447884;
+}
+.seat_box .addons{
+    display: flex;
+    justify-content: space-between;
+}
+.seat_box .addons>p{
+    margin: 10px 0 10px 20px;
+}
+
+.seat_box .addons .add_price i, .seat_box .addons .add_price p{
+    display: inline-block;
+    margin: 10px 0;
+}
+.seat_box .addons .add_price p{
+    margin-right: 20px;
+}
+.seat_box p.skip{
+    margin: 5px auto 15px auto;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+    color: #999;
+}
+.seat_bg button{
+    width: 12rem;
+    padding: 8px 3px;
+    font-size: 16px;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+.seat_bg button:active{
+    opacity: .8;
+}
+.seat_bg .btnbox{
+    display: flex;
+    justify-content: center;
+}
+#bk{
+    background-color: #666;
+    margin-right: 10px;
+}
+#chk{
+    background-color:#447884;
+}
+
+@media (min-width:576px) and (max-width:768px){
+    .seat_bg .seat_box{
+        width: 55%;
+    }
+    .seat_bg .seat_box h4+p{
+        padding: 40px 0 40px 20px;
+    }
+}
+@media (max-width:575px){
+    .seat_bg .seat_box{
+        width: 85%;
+    }
+    .seat_bg button{
+        width: 9rem;
+    }
+}
 /*------booking footer-------*/
 footer.fr_booking{
+    position: relative;
     background: none;
     background-color: #333;
     text-align: center;
@@ -126,6 +339,8 @@ footer.fr_booking{
     justify-content: center;
     align-items: center;
     padding: 30px 0;
+    bottom: 0px;
+    left: 0;
 }
 footer.fr_booking a{
     font-weight: bold;

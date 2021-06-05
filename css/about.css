@@ -2,19 +2,23 @@
  /*----------section1----------*/
  main {
     display: flex;
-    width: 1200px;
-    position: relative;
-}
-
-main h2 {
-    position: absolute;
-    top: 60px;
-    left: 150px;
+    width: 100%;
 }
 
 .box_video {
     margin-top: 80px;
+    width: 85%;
     text-align: center;
+    position: relative;
+}
+
+.box_video h2 {
+    position: absolute;
+    width: 70%;
+    top:20px;
+    left:0;
+    right:0;
+    margin: auto;
 }
 
 .box_video video {
@@ -40,9 +44,37 @@ main h2 {
     width: 75%;
     margin-bottom: 40px;
 }
-
+/*首屏平板版*/
+@media (min-width:576px) and (max-width:768px){
+    main{
+        margin-top: 30px;
+        width: 100%;
+    }
+    .box_video{
+        /* width: 90%; */
+        margin: 0 auto;
+    }
+    .content{
+        transform: translateX(-15%);
+    }
+}
+/*首屏手機版*/
+@media (max-width:575px){
+    main{
+        flex-wrap: wrap;
+    }
+    .box_video{
+        width: 100%;
+        margin-top: 0px;
+    }
+    .content{
+        width: 90%;
+        transform: translateX(0);
+        margin: 0 auto;
+    }
+}
 /*----------section2*----------/
-/* 太空船 */
+/* 太空船區 */
 .abt_sec2 h4 {
     margin-top: 100px;
     margin-left: 150px;
@@ -75,9 +107,10 @@ main h2 {
 }
 
 .box_cards .card {
-    max-width: 300px;
+    width: 300px;
     text-align: center;
     background-color: white;
+    border: 1px solid yellow;
 }
 
 .box_cards .card .bg_img {
@@ -99,7 +132,6 @@ main h2 {
     background-position: center;
     transform: scale(1);
     opacity: 0;
-  
 }
 
 .card .bg_img img {
@@ -107,8 +139,7 @@ main h2 {
     width: 60%;
     max-height: 360px;
     z-index: 1;
-    transform: translateY(0);
-    
+    transform: translateY(0);   
 } 
 
 .box_cards .card:nth-of-type(3) img {
@@ -130,13 +161,60 @@ main h2 {
     margin: 0 auto;
 }
 
-
 .card a {
     margin-bottom: 20px;
     color: #8EDDF9;
     padding: 8px 10px;
     font-size: 12px;
 }
+/*ship平板版*/
+@media (min-width:576px) and (max-width:768px){
+    .abt_sec2 h4{
+        margin-top: 50px;
+        margin-left: 45px;
+    }
+    .box_cards{
+        width: 100%;
+        margin-top: 15px;
+        padding: 0;
+    }
+    .box_cards .card{
+        width: 230px;
+    }
+    .card p:nth-of-type(1){
+        margin-top: 10px;
+    }
+    .card a{
+        margin-bottom: 10px;
+    }
+    .box_cards .card .bg_img{
+        height: 300px;
+    }
+}
+/*ship手機版*/
+@media (max-width:575px){
+    .abt_sec2 h4{
+        margin-top: 40px;
+        margin-left: 20px;
+    }
+    .box_cards{
+        display: block;
+        margin-top: 15px;
+        padding: 0;
+    }
+    .box_cards .card{
+        width: 90%;
+        margin: 0 auto 10px auto;
+    }
+    .card .bg_img img{
+        width: 40%;
+    } 
+    .box_cards .card:nth-of-type(3) img{
+        width: 28%;
+    }
+  
+}
+
 /* 太空船動畫 */
 @keyframes shipsMove{
     0%{
@@ -230,13 +308,12 @@ main h2 {
     }
 }
 
-/* 太空人 */
+/* 太空人區 */
 .box_men {
     display: flex;
     margin-top: 40px;
     padding: 0 110px;
     justify-content: center;
-
 }
 
 .men_img {
@@ -263,6 +340,24 @@ main h2 {
     margin: 10px auto;
 }
 
+/*太空人平板版*/
+@media (min-width:576px) and (max-width:768px){
+    .box_men{
+        margin-top: 15px;
+        padding: 0;
+    }
+}
+/*太空人手機版*/
+@media (max-width:575px){
+    .box_men{
+        padding: 0;
+        flex-wrap: wrap;
+        margin-top: 15px;
+    }
+    .men_img{
+        width: 45%;
+    }
+}
 /*btn換色*/
 .box_btn {
     text-align: center;

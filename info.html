@@ -52,14 +52,31 @@
                 </a>
             </li>
         </ul>
+        <button class="hamburger hamburger--collapse" type="button">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </button>
     </header>
+    <aside id="menu">
+        <ul>
+            <li><a href="news.html">NEWS</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="info.html">INFORMATION</a></li>
+            <li><a href="route.html">ROUTE</a></li>
+            <li><a href="booking.html">BOOKING</a></li>
+        </ul>
+    </aside>
+    <div class="bg_menu">
+    </div>
     <section class="info_sec1">
         <div>
             <article>
                 <img src="./img/info/station.png" alt="">
                 <div class="word">
                     <h3>THE SPACE STATION</h3>
-                    <p>The International Space Station with ESA’s Columbus laboratory flies 400 km high at speeds
+                    <p class="long">The International Space Station with ESA’s Columbus laboratory flies 400 km high at
+                        speeds
                         that
                         defy gravity – literally. At 28 800 km/h it only takes 92 minutes for the weightless
                         laboratory
@@ -80,7 +97,8 @@
                 <img src="./img/info/spacebed.png" alt="">
                 <div class="word">
                     <h3>TO LIVE IN OUTER SPACE</h3>
-                    <p>After a long day at travel, nothing is better than a good night's sleep! Just like on Earth, in
+                    <p class="long">After a long day at travel, nothing is better than a good night's sleep! Just like
+                        on Earth, in
                         space a worker goes to bed at a certain time, then wakes up and prepares for your trip again.
                         There are a few differences though. Space has no "up" or "down," but it does have
                         microgravity.As a result, astronauts are weightless and can sleep in any orientation.However,
@@ -242,27 +260,27 @@
         </div>
         <div class="bg_modal" id="modal">
             <div class="close_circle" id="close"><i class="fal fa-times"></i></div>
-                <div class="modal_content">
-                    <div class="word">
-                        <div class="left">
-                            <img src="./img/info/food_producer.JPG" alt="">
-                            <p>Department of Marine Science</p>
-                            <p>Representative in charge Yasuyuki Kosaka</p>
-                        </div>
-                        <div class="right">
-                            <p>Message from the person in charge</p>
-                            <h4>Saba Kaido Delivery International Space Station!</h4>
-                            <p>We will provide mackerel developed by
-                                high school students from Wakasa Obama, Fukui Prefecture, which is the production center
-                                of mackerel. Fresh chub mackerel that can be used as sashimi is canned with soy sauce.
-                                With the support of Mr. Noguchi, astronauts, and JAXA, we high school students make it
-                                by hand with love. Please enjoy the space Japanese food delivered from Wakasa Saba
-                                Kaido.</p>
-                        </div>
+            <div class="modal_content">
+                <div class="word">
+                    <div class="left">
+                        <img src="./img/info/food_producer.JPG" alt="">
+                        <p>Department of Marine Science</p>
+                        <p>Representative in charge Yasuyuki Kosaka</p>
                     </div>
-                    <img src="./img/info/food_intro1.jpg" alt="">
-                    <img src="./img/info/01fd_cannedMacherelInSoySauce.jpg" alt="">
+                    <div class="right">
+                        <p>Message from the person in charge</p>
+                        <h4>Saba Kaido Delivery International Space Station!</h4>
+                        <p>We will provide mackerel developed by
+                            high school students from Wakasa Obama, Fukui Prefecture, which is the production center
+                            of mackerel. Fresh chub mackerel that can be used as sashimi is canned with soy sauce.
+                            With the support of Mr. Noguchi, astronauts, and JAXA, we high school students make it
+                            by hand with love. Please enjoy the space Japanese food delivered from Wakasa Saba
+                            Kaido.</p>
+                    </div>
                 </div>
+                <img src="./img/info/food_intro1.jpg" alt="">
+                <img src="./img/info/01fd_cannedMacherelInSoySauce.jpg" alt="">
+            </div>
         </div>
     </section>
     <footer>
@@ -332,7 +350,33 @@
                 slidesToScroll: 2,
                 arrows: false,
                 centerMode: false,
-                asNavFor: '.s_below'
+                asNavFor: '.s_below',
+                responsive: [
+                    {
+                        breakpoint: 767,
+                        settings: {
+                            slidesToShow: 4,
+                            slidesToScroll: 4,
+                            infinite: true,
+                            dots: false
+                        }
+                    },
+                    {
+                        breakpoint: 576,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 2,
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+              
+                ]
             });
             $('.s_below').slick({
                 slidesToShow: 5,
@@ -340,16 +384,45 @@
                 asNavFor: '.s_above',
                 dots: false,
                 centerMode: false,
-                focusOnSelect: false
+                focusOnSelect: false,
+                responsive: [
+                    {
+                        breakpoint: 767,
+                        settings: {
+                            slidesToShow: 4,
+                            slidesToScroll: 4,
+                            infinite: true,
+                            dots: true
+                        }
+                    },
+                    {
+                        breakpoint: 576,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 2,
+                            dots: true
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+     
+                ]
             });
 
+
+
             //slider clicked
-            $('#modal').hide(); 
-            $('.slider .out a').click(function(event){
+            $('#modal').hide();
+            $('.slider .out a').click(function (event) {
                 event.preventDefault();
-                $('#modal').show();  
+                $('#modal').show();
             });
-            $('#close').click(function(){
+            $('#close').click(function () {
                 $('#modal').fadeOut();
             });
         });

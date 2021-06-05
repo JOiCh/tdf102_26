@@ -1,0 +1,40 @@
+
+
+
+
+ <!-- <div class="seat_bg">
+                <div class="seat_box">
+                    <h4>CHECKOUT BASKET</h4>
+                    <p>U2 2146 : 3C</p>
+                    <div class="addons">
+                        <p>Flight Add-Ons</p>
+                        <div class="add_price">
+                            <i class="fas fa-dollar-sign"></i>
+                            <p>15000</p>
+                        </div>
+                    </div>
+                    <p>Skip seat selection</p>
+                    <button>Back</button>
+                    <button>Check</button>
+                </div>
+            </div> -->
+
+/* .seat_bg{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.85);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .1s;
+    z-index: 5;
+}
+.seat_bg .seat_box{
+    width: 45%;
+    background-color: white;
+    padding: 50px;
+    color: #333;
+} */
