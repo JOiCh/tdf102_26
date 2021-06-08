@@ -66,11 +66,11 @@
         </ul>
     </aside>
     <div class="bg_menu">
-    </div> 
+    </div>
     <section class="addOns_sec1">
         <h3>RIDESHARE PROGRAM</h3>
         <main>
-            <p>12/2021 ┃ SSO ┃ 500-600±25km ┃ 
+            <p>12/2021 ┃ SSO ┃ 500-600±25km ┃
                 500-600±25km ┃ - - ┃ SSO±0.1° ┃ 55
                 kg ┃ 15" ┃ $1.3 M</p>
             <div class="route">
@@ -100,7 +100,7 @@
                         <label class="checkbox" for="item1_check"><span>PORT ADAPTER</span></label>
                         <div class="add_price">
                             <i class="fas fa-dollar-sign"></i>
-                            <p>15000</p>
+                            <p></p>
                         </div>
                     </div>
                     <div class="below">
@@ -134,7 +134,7 @@
                         <label class="checkbox" for="item2_check"><span>SEPARATION SYSTEM</span></label>
                         <div class="add_price">
                             <i class="fas fa-dollar-sign"></i>
-                            <p>15000</p>
+                            <p></p>
                         </div>
                     </div>
                     <div class="below">
@@ -166,10 +166,11 @@
                 <div class="item">
                     <div class="above">
                         <input type="checkbox" id="item3_check" class="cge_checkbox">
-                        <label class="checkbox" for="item3_check"><span>PAYLOAD ELECTRICAL CONNECTIVITY AT LAUNCH PAD</span></label>
+                        <label class="checkbox" for="item3_check"><span>PAYLOAD ELECTRICAL CONNECTIVITY AT LAUNCH
+                                PAD</span></label>
                         <div class="add_price">
                             <i class="fas fa-dollar-sign"></i>
-                            <p>15000</p>
+                            <p></p>
                         </div>
                     </div>
                     <div class="below">
@@ -187,7 +188,7 @@
                         <label class="checkbox" for="item4_check"><span>FUEL NEEDED</span></label>
                         <div class="add_price">
                             <i class="fas fa-dollar-sign"></i>
-                            <p>15000</p>
+                            <p></p>
                         </div>
                     </div>
                     <div class="below">
@@ -204,7 +205,7 @@
                         <label class="checkbox" for="item5_check"><span>INSURANCE</span></label>
                         <div class="add_price">
                             <i class="fas fa-dollar-sign"></i>
-                            <input type="number">
+                            <input type="number" id="item5_ipt">
                         </div>
                     </div>
                     <div class="below">
@@ -250,6 +251,84 @@
             //     alert('1111');
             //     // $('.add_price p').css('display','inline-block');
             // }
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            //item1:check時radio選取
+            let chkBox1 = document.getElementById('item1_check');
+            let rdo1 = document.getElementById('item1_radio');
+
+            chkBox1.addEventListener('click', function () {
+                if (chkBox1.checked) {
+                    rdo1.checked = true;
+                    this.closest('div').querySelector('div.add_price p').innerHTML = 15000;
+                } else {
+                    rdo1.checked = false;
+                    this.closest('div').querySelector('div.add_price p').innerHTML = "";
+                }
+                var price1 = parseInt(this.closest('div').querySelector('div.add_price p').innerHTML);
+                if( price1=="" ){
+                    console.log("1111");
+                }
+            });
+
+            //item2:check時radio選取
+            let chkBox2 = document.getElementById('item2_check');
+            let rdo2 = document.getElementById('item5_radio');
+
+            chkBox2.addEventListener('click', function () {
+                if (chkBox2.checked) {
+                    rdo2.checked = true;
+                    this.closest('div').querySelector('div.add_price p').innerHTML = 15000;
+                } else {
+                    rdo2.checked = false;
+                    this.closest('div').querySelector('div.add_price p').innerHTML = "";
+                }
+                var price2 = parseInt(this.closest('div').querySelector('div.add_price p').innerHTML);
+                //console.log(price2);
+            });
+
+            //item3:check時出現價錢
+            let chkBox3 = document.getElementById('item3_check');
+            chkBox3.addEventListener('click', function () {
+                if (chkBox3.checked) {
+                    this.closest('div').querySelector('div.add_price p').innerHTML = 15000;
+                } else {
+                    this.closest('div').querySelector('div.add_price p').innerHTML = "";
+                }
+                var price3 = parseInt(this.closest('div').querySelector('div.add_price p').innerHTML);
+                //console.log(price3);
+            });
+
+            //item4:check時出現價錢
+            let chkBox4 = document.getElementById('item4_check');
+            chkBox4.addEventListener('click', function () {
+                if (chkBox4.checked) {
+                    this.closest('div').querySelector('div.add_price p').innerHTML = 15000;
+                } else {
+                    this.closest('div').querySelector('div.add_price p').innerHTML = "";
+                }
+                var price4 = parseInt(this.closest('div').querySelector('div.add_price p').innerHTML);
+                //console.log(price4);
+            });
+
+            //item5:input值存為變數
+            let chkBox5 = document.getElementById('item5_check');
+            chkBox5.addEventListener('click', function () {
+                let insurance_price = document.getElementById('item5_ipt');
+
+                insurance_price.addEventListener('keyup', function (e) {
+                    if ((insurance_price.value != "") && e.which == 13) {
+                        var price5 = parseInt(insurance_price.value);
+                    }
+                });
+
+            });
+
+
+            //顯示加總
+            //document.querySelector('total p#total_price').innerHTML = price1 + price2 + price3 + price4 + price5;
         });
     </script>
 </body>

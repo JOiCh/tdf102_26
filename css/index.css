@@ -12,7 +12,7 @@ section.sec_1st {
     section.sec_1st{
         background-image: url(../img/index/bg_stars3.jpg);
         background-repeat: no-repeat;
-        background-size: contain;
+        background-size: cover;
         background-position: center;
     }
 }
