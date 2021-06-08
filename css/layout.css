@@ -77,6 +77,9 @@ button a {
     box-shadow: 2px 2px 3px #FDD834;
     border: none;
 }
+.btn_level1:hover{
+    opacity: .8;
+}
 
 /*第二級button滑過特效*/
 .btn_level2, .btn_level3 {
@@ -150,7 +153,6 @@ header {
 
 header ul {
     display: flex;
-    border:1px solid red
 }
 
 header img {
@@ -159,7 +161,6 @@ header img {
 }
 
 header li a {
-    border: 1px solid yellow;
     font-size: 14px;
     font-weight: bold;
     color: white;
@@ -201,7 +202,6 @@ header li a .absolute {
     height: 2px;
 }
 header button.hamburger{
-    border: 1px solid blue;
     position: absolute;
     right:10px;
     top: 50%;
@@ -266,10 +266,18 @@ aside ul{
     text-align: right;
     margin-right: 25px;
 }
+aside ul li{
+    opacity: 0;
+}
 aside ul a{
     padding: 10px 0;
     display: block;
 }
+aside ul a:hover{
+    letter-spacing: 2px;
+    transition: 1.5s;
+}
+
 /*響應式侧選單toggle*/
 #menu.slide_right {
     transform: translateX(0);

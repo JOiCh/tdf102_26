@@ -5,10 +5,8 @@ form{
     display: flex;
     justify-content: center;
     padding: 5px;
-    border: 1px solid red;
 }
 form label {
-    border: 1px solid blue;
     width: 21.5%;
     margin: 0 8px;
 }
@@ -192,7 +190,6 @@ input[type=number] {
         display: block;
     }
     form label{
-        border: 1px solid blue;
         width: 52%;
         text-align: center;
         display: block;

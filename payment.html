@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SpaceZ</title>
+    <link rel="shortcut icon" href="./img/logo/logoz.png" type="image/x-icon">
+
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="./css/payment.css">
@@ -124,20 +126,20 @@
                     <button class="btn_level3"><a href="">PAY WITH BITCOIN</a></button>
                 </div>
             </div>
-            <form action="">
+            <form action="check.html" method="get" id="my_form">
                 <div class="item">
                     <label for="">
                         <span>Card Number</span>
-                        <input type="number"><i class="far fa-horizontal-rule"></i>
-                        <input type="number"><i class="far fa-horizontal-rule"></i>
-                        <input type="number"><i class="far fa-horizontal-rule"></i>
-                        <input type="number">
+                        <input type="text" class="card" maxlength="4">―
+                        <input type="text" class="card" maxlength="4">―
+                        <input type="text" class="card" maxlength="4">―
+                        <input type="text" class="card" maxlength="4">
                     </label>
                 </div>
                 <div class="item">
                     <label for="">
                         <span>Card Holder</span>
-                        <input type="text">
+                        <input type="text" id="holder">
                     </label>
                 </div>
                 <div class="item">
@@ -146,46 +148,48 @@
                         <div class="select_month">
                             <span>Month</span>
                             <select name="month" id="month_pick">
-                                <option  selected></option>
-                                <option >Jan</option>
-                                <option >Feb</option>
-                                <option >Mar</option>
-                                <option >Apr</option>
-                                <option >May</option>
-                                <option >June</option>
-                                <option >July</option>
-                                <option >Aug</option>
-                                <option >Sep</option>
-                                <option >Oct</option>
-                                <option >Nov</option>
-                                <option >Dec</option>
+                                <option selected></option>
+                                <option>Jan</option>
+                                <option>Feb</option>
+                                <option>Mar</option>
+                                <option>Apr</option>
+                                <option>May</option>
+                                <option>June</option>
+                                <option>July</option>
+                                <option>Aug</option>
+                                <option>Sep</option>
+                                <option>Oct</option>
+                                <option>Nov</option>
+                                <option>Dec</option>
                             </select>
                         </div>
                         <div class="select_year">
                             <span>Year</span>
                             <select name="year" id="year_pick">
-                                <option  selected></option>
-                                <option >2022</option>
-                                <option >2023</option>
-                                <option >2024</option>
-                                <option >2025</option>
-                                <option >2026</option>
-                                <option >2027</option>
-                                <option >2028</option>
-                                <option >2029</option>
-                                <option >2030</option>
-                                <option >2031</option>
-                                <option >2032</option>
-                                <option >2033</option>
+                                <option selected></option>
+                                <option>2022</option>
+                                <option>2023</option>
+                                <option>2024</option>
+                                <option>2025</option>
+                                <option>2026</option>
+                                <option>2027</option>
+                                <option>2028</option>
+                                <option>2029</option>
+                                <option>2030</option>
+                                <option>2031</option>
+                                <option>2032</option>
+                                <option>2033</option>
                             </select>
                         </div>
                     </label>
                     <label for="">
                         <span>Security Code</span>
-                        <input type="number">
+                        <input type="text" id="code" maxlength="3">
                     </label>
                 </div>
-              <button class="btn_level1" type="submit"><a href="check.html">SUBMIT</a></button>
+                <button class="btn_sub" type="submit">
+                    SUBMIT
+                </button>
             </form>
         </main>
     </section>
@@ -200,22 +204,114 @@
         </div>
     </footer>
     <script src="./js/jquery-3.6.0.min.js"></script>
-    <script src="./js/jquery.easing.1.3.js"></script>
+    <script src="./js/is.min.js"></script>
     <script src="./js/subscribe.js"></script>
     <script>
-        $(document).ready(function(){
-            $('#month_pick,#year_pick').on('change',function(){
+        $(document).ready(function () {
+            $('#month_pick,#year_pick').on('change', function () {
                 // console.log($('#month_pick').val())
-                if($('#month_pick,#year_pick').val() === '' ){
-                    $('.select_month span,.select_year span').css("display","block")
-                }else{
-                    $('.select_month span,.select_year span').css("display","none")
+                if ($('#month_pick,#year_pick').val() === '') {
+                    $('.select_month span,.select_year span').css("display", "block")
+                } else {
+                    $('.select_month span,.select_year span').css("display", "none")
                 };
-          
+
             });
             // $('#year_pick').on('change',function(){
             //     $('.select_year span').css("display","none")
             // });
+        });
+    </script>
+    <script>
+
+        //1.信用卡卡號
+        document.addEventListener('DOMContentLoaded', function () {
+
+            let cards = document.getElementsByClassName('card');
+            for (let i = 0; i < cards.length; i++) {
+                cards[i].addEventListener('keydown', function (e) {
+
+                    //keydown的''預設行為''是打的字出現在欄位上
+                    if ((e.which >= 48 && e.which <= 57) || e.which == 8) {
+                        //console.log(e.target.value.length); //會印出當下打的字還沒出現之前的資料
+                        if (e.target.value.length == 0 && e.which == 8) { //使用者按下delete鍵且欄位上數目是0時
+
+                            let prev_el = this.previousElementSibling; //就找前一個input元素
+                            prev_el.focus();
+                        }
+                    } else {
+                        e.preventDefault();
+                    }
+                });
+
+                //
+                cards[i].addEventListener('keyup', function (e) {
+                    //console.log(e.target.value);
+                    let str = (e.target.value).replace(/\D/g, "");//有非數字的東西就全部取代成空字串
+                    //console.log(str);
+                    e.target.value = str;
+
+                    if (str.length == 4) {
+                        let next_el = this.nextElementSibling;
+
+                        if (next_el != null) { //到最後一格沒有下一個元素可以找時會出現空值
+                            next_el.focus();
+                        }
+                    }
+                });
+            }
+            //2.安全認證三碼
+            let secCode = document.getElementById('code');
+            secCode.addEventListener('keydown', function(e){
+              if( (e.which<48 || e.which>57) && e.which!=8 ){
+                  e.preventDefault();
+              };
+            });
+            secCode.addEventListener('keyup', function(e){
+                let str = (e.target.value).replace(/\D/g, "");
+                e.target.value = str;
+            });
+
+            //3.submit按鈕按下的驗證
+            let form_el = document.getElementById('my_form');
+            form_el.addEventListener('submit', function (e) {
+
+                let holder = document.getElementById('holder');
+
+                let card_str = ""; //要驗證信用卡16位數字串
+                let cards = document.getElementsByClassName('card');
+                for(i=0; i<cards.length; i++){
+                    card_str += cards[i].value;
+                }
+
+                //先宣告一個變數來決定資料到底要不要送出
+                let sent_data = true;
+
+                if( holder.value=="" ){ //持卡人不能是空的
+                    holder.classList.add('-error');
+                    sent_data = false;
+                }else{
+                    holder.classList.remove('-error');
+                }
+
+                //驗證信用卡
+                if( is.creditCard(card_str) ){
+                    for(let i=0; i<cards.length; i++){
+                        cards[i].classList.remove('-error');
+                    }
+                }else{
+                    for(let i=0; i<cards.length; i++){
+                        cards[i].classList.add('-error');
+                    }
+                    sent_data = false;
+                }
+
+                //當驗證不通過時,就把sent_data改成false,則會進入if(等同資料就不會送出)
+                if(!sent_data){
+                    e.preventDefault();
+                };
+            });
+
         });
     </script>
 </body>

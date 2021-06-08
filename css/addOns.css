@@ -1,5 +1,4 @@
 @import "layout.css";
-*{border: 1px solid yellow;}
 
 .addOns_sec1{
     margin: 100px auto;
@@ -145,7 +144,6 @@ footer.fr_booking span{
 @media (max-width:575px){
     .add_list{
         width: 95%;
-        border: 1px solid salmon;
     }
 }
 /*checkbox換圖*/
@@ -292,6 +290,7 @@ footer.fr_booking span{
 }
 
 .no5 .add_price input{
+    width: 60%;
     appearance: none;
     outline: none;
     background: none;

@@ -3,7 +3,7 @@
 
 .available_sec1{
     margin: 100px auto;
-    min-height: 100vh;
+    min-height: calc(100vh - 353px);
 }
 .available_sec1 h3{
     text-align: center;
@@ -46,65 +46,71 @@
     }
 }
 /*table*/
-table{
+table.the{
     margin:40px auto;
     border-collapse:separate;
     border-spacing:10px 15px
 }
-table tr,table tr td{
+table.the tr,table.the tr td{
     padding: 18px 12px;
     background-color: #ffffff20;
 }
-table th{
+table.the th{
     font-size: 12px;
     color: #447884;
     text-align: left;
 }
-table tr td{
+table.the tr td{
     border: 1px solid white;
 }
-table tr:first-child {
+table.the tr:first-child {
     background-color: transparent;
 }
-table tr td h4{
+table.the tr td h4{
     display: none;
 }
 @media (min-width:576px) and (max-width:768px){
-    table{
+    table.the{
         margin: 15px;
         display: block;
         overflow-x: auto;
     }
-    table tr,table tr td{
+    table.the tr,table.the tr td{
         padding: 2px 12px;
     }
 }
 @media (max-width:575px){
-    table{
+    table.the{
         width: 90%;
         border: none;
-        display: block;
+        display: flex;
         margin-top: 0;
+        margin-left: auto;
+        margin-right: auto;
     }
-    table th,table tr:first-child{
+    table.the tbody{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    table.the th,table.the tr:first-child{
         display: none;
     }
-    table tr,table tr td{
+    table.the tr,table.the tr td{
         display: block;
         padding: 6px 12px;
     }
-    table tr{
+    table.the tr{
         width: 100%;
         border: 1px solid white;
-        margin-bottom: 15px;
+        margin:0 auto 15px auto;
     }
-    table tr td{
+    table.the tr td{
         border: none;
     }
-    table tr td + td {
+    table.the tr td + td {
         border: 1px solid #666;
     }
-    table tr td::before{
+    table.the tr td::before{
         content: attr(data-th)' :  ';
         color: #447884;
         display: inline-block;
@@ -112,29 +118,29 @@ table tr td h4{
         text-align: right;
         padding-right: 6px;
     }
-    table tr td:last-child{
+    table.the tr td:last-child{
         background-color: transparent;
     }
-    table tr td:last-child::before{
+    table.the tr td:last-child::before{
         display: none;
     }
-    table tr td button{
+    table.the tr td button{
         display: block;
         margin: 10px auto;
     }
-    table tr td h4{
+    table.the tr td h4{
         display: block;
         font-size: 14px;
         position: relative;
         z-index: 2;
     }
-    table tr td button:hover h4{
+    table.the tr td button:hover h4{
         color: #FDD834;
     }
 }
 
 /*客製submit*/
-table td:last-child{
+table.the td:last-child{
     border: none; 
     padding: 0px; 
 }

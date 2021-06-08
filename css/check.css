@@ -1,8 +1,7 @@
 @import 'layout.css';
-*{outline: 1px solid red;}
 .check_sec1{
     margin: 100px 0 100px 0;
-    min-height: 100vh;
+    min-height: calc(100vh - 353px);
 }
 .check_sec1 h3{
     text-align: center;
@@ -78,7 +77,7 @@ table tr:first-child {
 
 /* booking footer */
 footer.fr_booking{
-    position: relative;
+    position: fixed;
     background: none;
     background-color: #333;
     text-align: center;

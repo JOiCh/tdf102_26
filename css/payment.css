@@ -1,7 +1,7 @@
 @import 'layout.css';
 .pay_sec1{
     margin: 100px 0 120px 0;
-    /* min-height: 100vh; */
+    min-height: calc(100vh - 373px);
 }
 .pay_sec1 h3{
     text-align: center;
@@ -167,6 +167,7 @@ form{
     margin: 40px auto 50px auto;
     position: relative;
 }
+
 form input, form select{
     padding: 15px;
     font-size: 16px;
@@ -177,18 +178,38 @@ form input, form select{
     margin-top: 15px;
     /* position: relative; */
 }
+
 form input:focus, form select:focus{
     border: 1px solid #8EDDF9;
 }
+
 form span{
     font-size:12px;
     position: absolute;
     color:#CBC9C9;
 }
+
 form .item{
     position: relative;
     display: flex;
     margin-top: 10px;
+}
+
+.-error{
+    border: 1px solid red !important;
+}
+form button{
+    font-size: 14px;
+    font-weight: bold;
+    padding: 15px 20px;
+    color:white;
+    background-color: #FDD834;
+    box-shadow: 2px 2px 3px #FDD834;
+    border: none;
+    cursor: pointer;
+}
+form button:hover{
+    opacity: .8;
 }
 
 /* 表單區斷點版 */
@@ -205,7 +226,11 @@ form .item{
 
 .item:nth-of-type(1) input{
     width: calc( 79.5% / 4 );
-    margin-right: 3px;
+    margin-right: 5px;
+    margin-left: 2px;
+}
+.item:nth-of-type(1) input:first-of-type{
+    margin-left: 0;
 }
 .item:nth-of-type(2) label{
     width:100%
