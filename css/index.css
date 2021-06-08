@@ -10,7 +10,7 @@ section.sec_1st {
 }
 @media (max-width:380px){
     section.sec_1st{
-        background-image: url(../img/index/bg_stars_m.jpg);
+        background-image: url(../img/index/bg_stars3.jpg);
         background-repeat: no-repeat;
         background-size: contain;
         background-position: center;
