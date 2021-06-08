@@ -333,6 +333,20 @@ form button{
         bottom: -70px;
         }
 }
+@media (max-width:376px){
+    .item:nth-of-type(1) input{
+        width:calc( (95% - 81px) / 4 );
+    }
+    .item:nth-of-type(2) input,.item:nth-of-type(2) label{
+        width: 97.2%
+    }
+    .item:nth-of-type(3) .select_month, .item:nth-of-type(3) .select_year{
+        margin-right: 7%;
+    }
+    .item:nth-of-type(3) label:nth-of-type(1){
+        width: 60%;
+    }
+}
 
 /*input number消除旁邊箭頭*/
 input::-webkit-outer-spin-button,

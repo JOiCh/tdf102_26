@@ -8,6 +8,14 @@ section.sec_1st {
     background-size: cover;
     background-attachment: fixed;
 }
+@media (max-width:575px){
+    section.sec_1st{
+        background-size: cover;
+        -webkit-background-size: cover;
+        background-position: right 0px top 0px;
+        -webkit-background-position: right 0px top 0px;
+    }
+}
 
 /*main區*/
 main {
@@ -383,7 +391,7 @@ section .img_ship {
 @media (max-width:768px){
     .index_sec3 > h3{
         display: block;
-        width: 80%;
+        width: 70%;
         margin: 70px auto 0 auto;
     }
     .index_sec3 .numbers{
