@@ -48,8 +48,7 @@
     .ticket{
         width: 90%;
         padding: 30px 40px;
-    }
-    
+    }    
 }
 
 .item1,.item2,.item3{
@@ -107,14 +106,11 @@
 }
 
 .item2 .rt{
-    border: 1px solid #666;
-    border-bottom: none;
+    
     width: 25%;
     padding: 5px;
 }
-.item2 .rt:last-of-type{
-    border-bottom:1px solid #666;
-}
+
 .item3{
     position: relative;
 }
@@ -122,7 +118,6 @@
     width: 50%;
 }
 .item3 .sys:first-of-type{
-    border-right: 1px solid #666;
     margin-right: 10px;
 }
 .item3::after{
@@ -151,6 +146,14 @@
     }
     .item2 .rt{
         width: 100%;
+        border: 1px solid #666;
+        border-bottom: none;
+    }
+    .item2 .rt:last-of-type{
+        border-bottom:1px solid #666;
+    }
+    .item3 .sys:first-of-type{
+        border-right: 1px solid #666;
     }
     .info:nth-of-type(2){
         width: 20%;
