@@ -8,11 +8,11 @@ section.sec_1st {
     background-size: cover;
     background-attachment: fixed;
 }
-@media (max-width:575px){
+@media (max-width:375px){
     section.sec_1st{
         background-image: url(../img/index/bg_stars_m.jpg);
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: contain;
         background-position: center;
         background-attachment: fixed;
     }

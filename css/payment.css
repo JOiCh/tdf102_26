@@ -176,7 +176,6 @@ form input, form select{
     border: 1px solid white;
     outline: none;
     margin-top: 15px;
-    /* position: relative; */
 }
 
 form input:focus, form select:focus{
@@ -335,16 +334,22 @@ form button{
 }
 @media (max-width:380px){
     .item:nth-of-type(1) input{
-        width:calc( (95% - 81px) / 4 );
+        width:calc( (90% - 81px) / 4 );
     }
     .item:nth-of-type(2) input,.item:nth-of-type(2) label{
-        width: 97.2%
-    }
-    .item:nth-of-type(3) .select_month, .item:nth-of-type(3) .select_year{
-        margin-right: 7%;
+        width: 95%
     }
     .item:nth-of-type(3) label:nth-of-type(1){
-        width: 60%;
+        width: 62%;
+    }
+    .item:nth-of-type(3) .select_month{
+        margin-right: 7%;
+    }
+    .item:nth-of-type(3) .select_year{
+        margin-right: 0;
+    }
+    .item:nth-of-type(3) label:last-of-type{
+        width: 26.5%;
     }
 }
 
