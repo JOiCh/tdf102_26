@@ -10,10 +10,11 @@ section.sec_1st {
 }
 @media (max-width:575px){
     section.sec_1st{
+        background-image: url(../img/index/bg_stars_m.jpg);
+        background-repeat: no-repeat;
         background-size: cover;
-        -webkit-background-size: cover;
-        background-position: right 0px top 0px;
-        -webkit-background-position: right 0px top 0px;
+        background-position: center;
+        background-attachment: fixed;
     }
 }
 
