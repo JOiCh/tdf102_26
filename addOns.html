@@ -143,19 +143,19 @@
                             from the options below, if required.</p>
                         <div class="radioBox">
                             <div class="radio">
-                                <input type="radio" name="q1" id="item5_radio">
+                                <input type="radio" name="q2" id="item5_radio">
                                 <label for="item5_radio">8"</label>
                             </div>
                             <div class="radio">
-                                <input type="radio" name="q1" id="item6_radio">
+                                <input type="radio" name="q2" id="item6_radio">
                                 <label for="item6_radio">11.732</label>
                             </div>
                             <div class="radio">
-                                <input type="radio" name="q1" id="item7_radio">
+                                <input type="radio" name="q2" id="item7_radio">
                                 <label for="item7_radio">13"</label>
                             </div>
                             <div class="radio">
-                                <input type="radio" name="q1" id="item8_radio">
+                                <input type="radio" name="q2" id="item8_radio">
                                 <label for="item_radio">18.25</label>
                             </div>
                         </div>
@@ -203,7 +203,7 @@
                     <div class="above no5">
                         <input type="checkbox" id="item5_check" class="cge_checkbox">
                         <label class="checkbox" for="item5_check"><span>INSURANCE</span></label>
-                        <div class="add_price">
+                        <div class="add_price5">
                             <i class="fas fa-dollar-sign"></i>
                             <input type="number" id="item5_ipt">
                         </div>
@@ -242,23 +242,30 @@
 
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
-    <script src="./js/subscribe.js"></script>
     <script src="./js/stagger.js"></script>
     <script>
-        $(document).ready(function () {
-            //check時顯示價格
-            // if($('#item1_check,#item2_check,#item3_check,#item4_check').attr('checked')){
-            //     alert('1111');
-            //     // $('.add_price p').css('display','inline-block');
-            // }
-        });
-    </script>
-    <script>
         document.addEventListener('DOMContentLoaded', function () {
-            //item1:check時radio選取
+
+            function total() {
+                let price = document.querySelectorAll('div.add_price p');
+                let price_el = 0;
+                for (i = 0; i < price.length; i++) {
+
+                    if (price[i].innerText == "") {
+                        parseInt(price[i].innerHTML.replace("", "0"));
+                    }
+                   // console.log(price[i].innerText);
+                    console.log(price[i].innerHTML);
+                    //price_el += parseInt(price[i].innerText);
+                    
+                }
+                //document.querySelector('total p#total_price').innerHTML = price_el.toString();
+            };
+
+
             let chkBox1 = document.getElementById('item1_check');
             let rdo1 = document.getElementById('item1_radio');
-
+            //item1:check時radio選取
             chkBox1.addEventListener('click', function () {
                 if (chkBox1.checked) {
                     rdo1.checked = true;
@@ -267,10 +274,7 @@
                     rdo1.checked = false;
                     this.closest('div').querySelector('div.add_price p').innerHTML = "";
                 }
-                var price1 = parseInt(this.closest('div').querySelector('div.add_price p').innerHTML);
-                if( price1=="" ){
-                    console.log("1111");
-                }
+                total();
             });
 
             //item2:check時radio選取
@@ -285,7 +289,8 @@
                     rdo2.checked = false;
                     this.closest('div').querySelector('div.add_price p').innerHTML = "";
                 }
-                var price2 = parseInt(this.closest('div').querySelector('div.add_price p').innerHTML);
+                total();
+                //var price2 = parseInt(this.closest('div').querySelector('div.add_price p').innerHTML);
                 //console.log(price2);
             });
 
@@ -297,7 +302,8 @@
                 } else {
                     this.closest('div').querySelector('div.add_price p').innerHTML = "";
                 }
-                var price3 = parseInt(this.closest('div').querySelector('div.add_price p').innerHTML);
+                total();
+                //var price3 = parseInt(this.closest('div').querySelector('div.add_price p').innerHTML);
                 //console.log(price3);
             });
 
@@ -309,7 +315,8 @@
                 } else {
                     this.closest('div').querySelector('div.add_price p').innerHTML = "";
                 }
-                var price4 = parseInt(this.closest('div').querySelector('div.add_price p').innerHTML);
+                total();
+                //var price4 = parseInt(this.closest('div').querySelector('div.add_price p').innerHTML);
                 //console.log(price4);
             });
 
@@ -326,9 +333,10 @@
 
             });
 
-
+            //console.log(price5);
             //顯示加總
-            //document.querySelector('total p#total_price').innerHTML = price1 + price2 + price3 + price4 + price5;
+            //document.querySelector('total p#total_price').innerHTML = price1 + price2;
+            //console.log(price1);
         });
     </script>
 </body>

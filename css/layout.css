@@ -255,9 +255,9 @@ aside{
     padding-top: 80px;
     background-color: black;
     position: fixed;
-    right: 0;
+    right: -100%;
     top: 0px;
-    transform: translateX(100%);
+    /* transform: translateX(100%); */
     z-index: 4;
     transition: all 1s;
 }
@@ -278,13 +278,7 @@ aside ul a:hover{
     transition: 1.5s;
 }
 
-/*響應式侧選單toggle*/
-#menu.slide_right {
-    transform: translateX(0);
-}
-.bg_menu.bg_show{
-    display: block !important;
-}
+
 /*----------footer----------*/
 footer {
     width: 100%;
@@ -367,9 +361,11 @@ footer .fr_list>ul {
 
 footer .fr_list li {
     list-style: none;
-    padding: 5px 0px;
+    padding: 2px 0px;
 }
-
+footer ul li ul li:first-of-type{
+    margin-top: 10px;
+}
 footer .fr_list li>a {
     font-size: 14px;
     font-weight: bold;

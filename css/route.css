@@ -6,9 +6,7 @@ main{
 }
 .planet_list{
     width: 75%;
-    display: flex;
     margin: 50px auto 0 auto;
-    display: flex;
     justify-content: space-between;
     display: none;
 }
@@ -37,7 +35,7 @@ main{
 .planet_item:hover{
     opacity: .8;
 }
-@media (max-width:768px){
+@media (max-width:1024px){
     .planet_list{
         display: flex;
     }
@@ -55,7 +53,7 @@ main{
     top:0px;
     left: 0px;
     transform: translate(50% 50%);
-    margin-left: 130px;
+    margin-left: 115px;
     padding: 8px 16px;
     display: none;
     transition: all .5s;
@@ -139,7 +137,11 @@ main{
 .row .word{
     margin-left: 10px;
 }
-
+@media(min-width:769px) and (max-width:1024px){
+    .introWord{
+        margin-top: 70px;
+    }
+}
 @media (min-width:576px) and (max-width:768px){
     .introWord{
         margin: 0 auto;
@@ -225,6 +227,7 @@ main{
     transform: translateY(-50px);
     transition: transform .5s;
     cursor: pointer;
+    
 }
 .circle-carousel__item{
     width: 150px; 
@@ -249,8 +252,13 @@ main{
     height: auto;
     transition: transform .5s;
 }
-
-@media (max-width:768px){
+@media (min-width:1025px) and (max-width:1282px){
+    .circle-carousel{
+        right:-410px;
+        top:-50px
+    }
+}
+@media (max-width:1024px){
     .circle-carousel{
        display: none;
     } 

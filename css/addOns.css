@@ -143,7 +143,7 @@ footer.fr_booking span{
 }
 @media (max-width:575px){
     .add_list{
-        width: 95%;
+        width: 90%;
     }
 }
 /*checkbox換圖*/
@@ -207,6 +207,11 @@ footer.fr_booking span{
     right:0px;
     border-bottom: rgb(117, 117, 117) 2px solid;
 }
+@media (max-width:575px){
+    .add_price{
+        margin-top: 15px;
+    }
+}
 
 /* 下半部 */
 .below p{
@@ -262,7 +267,7 @@ footer.fr_booking span{
     z-index: -1;
 
 }
-.no5 .add_price{
+.no5 .add_price5{
     position: absolute;
     left: 16%;
     top:0px
@@ -272,7 +277,7 @@ footer.fr_booking span{
         left: 28%;
         top:18px
     }
-    .no5 .add_price{
+    .no5 .add_price5{
         left: 26%;
         top:18px
     }
@@ -282,14 +287,14 @@ footer.fr_booking span{
         left: 40%;
         top:18px
     }
-    .no5 .add_price{
+    .no5 .add_price5{
         left: 38%;
         top:18px;
         width: 50%;
     }
 }
 
-.no5 .add_price input{
+.no5 .add_price5 input{
     width: 60%;
     appearance: none;
     outline: none;

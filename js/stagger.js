@@ -1,6 +1,14 @@
 var tl = new TimelineMax();
-        tl.staggerTo('aside ul li', .2, {
-            delay:.4,xPercent: -5,opacity:1,
+        tl.to('.bg_menu',0,{
+               display:"block",
+            }
+        ).to('#menu',0,{
+            right:0,
+        }
+        ). staggerTo('aside ul li', .15, {
+            delay:.3,
+            xPercent: -5,
+            opacity:1,
         }, .1)
 
         let o = document.getElementsByClassName('hamburger')[0];
@@ -8,13 +16,15 @@ var tl = new TimelineMax();
         tl.stop();
         
         o.addEventListener('click', function(){
-            // if(tl.reversed()){
-            //     tl.play();
-            // }else{
-            //     tl.reverse();
-            // }
-            tl.play();
+            if(tl.reversed()){
+                this.classList.add('is-active');
+                tl.play();
+            }else{
+                this.classList.remove('is-active');
+                tl.reverse();
+            }
         });   
         window.addEventListener('scroll', function(){
+            o.classList.remove('is-active');
             tl.reverse();
         });    
