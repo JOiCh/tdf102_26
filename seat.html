@@ -344,7 +344,7 @@
             for (i = 0; i < seat.length; i++) {
                 //console.log(i);
                 let seat_all = seat[i];
-                
+
 
                 seat[i].addEventListener('click', function () {
                     let seat_num = this.getAttribute('data-id');
@@ -353,18 +353,23 @@
                     let that = this;
                     let text = this.nextElementSibling;
                     let chk = document.getElementById('chk');
-                    
-                    chk.addEventListener('click', function () {
-                        //let seat_all2 = document.getElementsByClassName('cls-2');
 
-                        if( seat_all.classList.contains('-on') ){
-                            seat_all.classList.remove('-on');
-                            seat_all.nextElementSibling.classList.remove('-on2');
-                        }else{
-                            that.classList.add('-on');
-                            text.classList.add('-on2');
-                        } 
-                    }); 
+                    chk.addEventListener('click', function () {
+                        let seat_all2 = document.getElementsByClassName('cls-2');
+
+                        for (i = 0; i < seat_all2.length; i++) {
+
+                            if (seat_all2[i].classList.contains('-on')) {
+                                seat_all2[i].classList.remove('-on');
+                                seat_all2[i].nextElementSibling.classList.remove('-on2');
+                            } else {
+                                that.classList.add('-on');
+                                text.classList.add('-on2');
+                            }
+
+                        }
+
+                    });
                 })
             }
 

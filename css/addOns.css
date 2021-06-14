@@ -189,6 +189,9 @@ footer.fr_booking span{
     display: flex;
     justify-content: space-between;
 }
+.add_price{
+    display: none;
+}
 .add_price i,.add_price p{
     display: inline-block;
 }
@@ -314,5 +317,5 @@ input::-webkit-inner-spin-button {
     margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
 input[type=number] {
-    -moz-appearance:textfield; /* Firefox */
+    -moz-appearance:textfield !important; /* Firefox */
 }

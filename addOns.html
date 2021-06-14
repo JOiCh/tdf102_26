@@ -205,7 +205,7 @@
                         <label class="checkbox" for="item5_check"><span>INSURANCE</span></label>
                         <div class="add_price5">
                             <i class="fas fa-dollar-sign"></i>
-                            <input type="number" id="item5_ipt">
+                            <input type="number" id="item5_ipt" >
                         </div>
                     </div>
                     <div class="below">
@@ -217,7 +217,7 @@
                 <div class="total">
                     <p>CURRENT TOTAL WITH ADD-ONS</p>
                     <i class="fas fa-dollar-sign"></i>
-                    <p id="total_price">1,000,000</p>
+                    <p id="total_price"></p>
                 </div>
                 <div class="check">
                     <p>Click to enter contact and payment information. You will get a chance to review all information
@@ -245,21 +245,22 @@
     <script src="./js/stagger.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-
+            
+            let price5 = 0;
             function total() {
                 let price = document.querySelectorAll('div.add_price p');
                 let price_el = 0;
+                
                 for (i = 0; i < price.length; i++) {
 
                     if (price[i].innerText == "") {
-                        parseInt(price[i].innerHTML.replace("", "0"));
+                        //取出值取代為''零''在再得存回原本的地方
+                        price[i].innerHTML = parseInt(price[i].innerHTML.replace("", "0"));
                     }
-                   // console.log(price[i].innerText);
-                    console.log(price[i].innerHTML);
-                    //price_el += parseInt(price[i].innerText);
-                    
+                   price_el += ((parseInt(price[i].innerText))+price5);
+                   //console.log(price_el); 
                 }
-                //document.querySelector('total p#total_price').innerHTML = price_el.toString();
+                document.querySelector('p#total_price').innerText = price_el;
             };
 
 
@@ -267,6 +268,9 @@
             let rdo1 = document.getElementById('item1_radio');
             //item1:check時radio選取
             chkBox1.addEventListener('click', function () {
+                //點擊再顯示價錢
+                this.closest('div.above').querySelector('div.add_price').style.display="block";
+
                 if (chkBox1.checked) {
                     rdo1.checked = true;
                     this.closest('div').querySelector('div.add_price p').innerHTML = 15000;
@@ -282,6 +286,7 @@
             let rdo2 = document.getElementById('item5_radio');
 
             chkBox2.addEventListener('click', function () {
+                this.closest('div.above').querySelector('div.add_price').style.display="block";
                 if (chkBox2.checked) {
                     rdo2.checked = true;
                     this.closest('div').querySelector('div.add_price p').innerHTML = 15000;
@@ -290,34 +295,30 @@
                     this.closest('div').querySelector('div.add_price p').innerHTML = "";
                 }
                 total();
-                //var price2 = parseInt(this.closest('div').querySelector('div.add_price p').innerHTML);
-                //console.log(price2);
             });
 
             //item3:check時出現價錢
             let chkBox3 = document.getElementById('item3_check');
             chkBox3.addEventListener('click', function () {
+                this.closest('div.above').querySelector('div.add_price').style.display="block";
                 if (chkBox3.checked) {
                     this.closest('div').querySelector('div.add_price p').innerHTML = 15000;
                 } else {
                     this.closest('div').querySelector('div.add_price p').innerHTML = "";
                 }
                 total();
-                //var price3 = parseInt(this.closest('div').querySelector('div.add_price p').innerHTML);
-                //console.log(price3);
             });
 
             //item4:check時出現價錢
             let chkBox4 = document.getElementById('item4_check');
             chkBox4.addEventListener('click', function () {
+                this.closest('div.above').querySelector('div.add_price').style.display="block";
                 if (chkBox4.checked) {
                     this.closest('div').querySelector('div.add_price p').innerHTML = 15000;
                 } else {
                     this.closest('div').querySelector('div.add_price p').innerHTML = "";
                 }
                 total();
-                //var price4 = parseInt(this.closest('div').querySelector('div.add_price p').innerHTML);
-                //console.log(price4);
             });
 
             //item5:input值存為變數
@@ -327,16 +328,15 @@
 
                 insurance_price.addEventListener('keyup', function (e) {
                     if ((insurance_price.value != "") && e.which == 13) {
-                        var price5 = parseInt(insurance_price.value);
-                    }
-                });
-
+                        price5 = parseInt(insurance_price.value)/4;
+                        total();
+                    } 
+                });       
             });
 
-            //console.log(price5);
-            //顯示加總
-            //document.querySelector('total p#total_price').innerHTML = price1 + price2;
-            //console.log(price1);
+      
+
+
         });
     </script>
 </body>
