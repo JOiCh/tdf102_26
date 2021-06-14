@@ -117,7 +117,11 @@ main form .price h3{
     padding: 8px;
     display: none;
 }
-
+@media (min-width:1024px){
+    .custom_field,.custom_field .placeholder{
+        font-size: 12px;
+    }
+}
 @media (max-width:1200px){
     .custom_field .alert{
         margin: 0 auto;
@@ -139,7 +143,7 @@ main form .price h3{
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
 /* display: none; <- Crashes Chrome on hover */
-    -webkit-appearance: none;
+    -webkit-appearance: none !important;
     margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
 input[type=number] {
@@ -219,15 +223,12 @@ input[type=number] {
     }
 }
 /*sec1平板版*/
-@media (max-width:768px){
-    .book_sec1 .title h3{
-        margin-top: 70px;
-    }
+@media (max-width:1024px){
     main form{
         display: block;
     }
     main form > label{
-        width: 52%;
+        width: 42%;
         text-align: center;
         display: block;
         margin: 10px auto;
@@ -256,6 +257,15 @@ input[type=number] {
     .bookin_submit button i{
         display: none;
     } 
+}
+@media (max-width:768px){
+    .book_sec1 .title h3{
+        margin-top: 70px;
+    }    
+    main form > label{
+        width: 52%;
+    }
+   
 }
 /*sec1手機版*/
 @media (max-width:575px) {
