@@ -9,7 +9,15 @@
     font-family:'h2';
     src: url(../font/ArchivoBlack-Regular.ttf);
 }
-body {
+@font-face {
+    font-family:'regular';
+    src: url(../font/Ubuntu-Regular.ttf);
+}
+@font-face {
+    font-family:'bold';
+    src: url(../font/Ubuntu-Bold.ttf);
+}
+html,body {
     background-color: black;
     color: white;
     hyphens: auto;
@@ -37,16 +45,19 @@ section h3 {
 }
 
 section h4 {
+    font-family: 'bold';
     font-size: 20px;
 }
 
 section p {
+    font-family:'regular';
     font-size: 14px;
     line-height: 18px;
     font-weight: 300;
 }
 
 button a {
+    font-family:'regular';
     font-size: 14px;
     font-weight: bold;
     padding: 15px 20px;
