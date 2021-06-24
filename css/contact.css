@@ -97,6 +97,7 @@ form input{
     margin:1rem 5px 0 0;
     outline: none;
     margin-top: 15px;
+    border-radius: 0;
 }
 /*input斷點版*/
 @media (max-width:768px){

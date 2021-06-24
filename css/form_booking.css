@@ -103,7 +103,11 @@ form .price h3{
     padding: 8px;
     display: none;
 }
-
+@media (min-width:1024px){
+    .custom_field,.custom_field .placeholder{
+        font-size: 12px;
+    }
+}
 @media (max-width:1200px){
     .custom_field .alert{
         margin: 0 auto;
@@ -185,6 +189,41 @@ input[type=number] {
 }
 
 /*sec1平板版*/
+@media (max-width:1024px){
+    main form{
+        display: block;
+    }
+    main form > label{
+        width: 42%;
+        text-align: center;
+        display: block;
+        margin: 10px auto;
+    }
+    .custom_field input,.custom_select select,#ym{
+        width: 100%;
+    }
+    .bookin_submit button{
+        width: 120px;
+        margin-top: 10px;
+        text-align: center;
+    }
+    .bookin_submit button h4{
+        display: block;
+        font-size: 16px;
+        color: white;
+        position: absolute;
+        z-index: 2;
+        top:50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+    .bookin_submit button:hover h4{
+        color: black;
+    }
+    .bookin_submit button i{
+        display: none;
+    } 
+}
 @media (max-width:768px){
     form{
         display: block;

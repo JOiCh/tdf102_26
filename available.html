@@ -226,6 +226,11 @@
     <script>
         $(document).ready(function () {
             //路線選單按鈕
+            $(window).resize(function(){
+                // if( $(window).width()>768 ){
+                //     $('form').css('display', 'flex');
+                // }
+            });
 
             $('.shrink').on('click', function () {
                 $('form').css('display', 'block');

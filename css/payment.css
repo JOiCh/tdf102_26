@@ -176,6 +176,7 @@ form input, form select{
     border: 1px solid white;
     outline: none;
     margin-top: 15px;
+    border-radius: 0;
 }
 
 form input:focus, form select:focus{
