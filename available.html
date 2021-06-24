@@ -128,7 +128,7 @@
                     <td data-th="INCLINATION">53±2°</td>
                     <td data-th="AVAILABLE PORTS">15",24"</td>
                     <td class="tbl_btn">
-                        <button action="addOns.html">
+                        <button action="addOns.html" id="sel1" class="selection">
                             <a href="addOns.html">
                                 <i class="far fa-long-arrow-right arrRight"></i>
                                 <h4>SELECT</h4>
@@ -145,7 +145,7 @@
                     <td data-th="INCLINATION">53±2°</td>
                     <td data-th="AVAILABLE PORTS">15",24"</td>
                     <td class="tbl_btn">
-                        <button action="addOns.html">
+                        <button action="addOns.html" id="sel2" class="selection">
                             <a href="addOns.html">
                                 <i class="far fa-long-arrow-right arrRight"></i>
                                 <h4>SELECT</h4>
@@ -163,7 +163,7 @@
                     <td data-th="INCLINATION">53±2°</td>
                     <td data-th="AVAILABLE PORTS">15",24"</td>
                     <td class="tbl_btn">
-                        <button action="addOns.html">
+                        <button action="addOns.html" id="sel3" class="selection">
                             <a href="addOns.html">
                                 <i class="far fa-long-arrow-right arrRight"></i>
                                 <h4>SELECT</h4>
@@ -180,7 +180,7 @@
                     <td data-th="INCLINATION">SSO±0.1°</td>
                     <td data-th="AVAILABLE PORTS">15",24"</td>
                     <td class="tbl_btn">
-                        <button action="addOns.html">
+                        <button action="addOns.html" id="sel4" class="selection">
                             <a href="addOns.html">
                                 <i class="far fa-long-arrow-right arrRight"></i>
                                 <h4>SELECT</h4>
@@ -197,7 +197,7 @@
                     <td data-th="INCLINATION">53±2°</td>
                     <td data-th="AVAILABLE PORTS">15",24"</td>
                     <td class="tbl_btn">
-                        <button action="addOns.html">
+                        <button action="addOns.html" id="sel5" class="selection">
                             <a href="addOns.html"><i class="far fa-long-arrow-right arrRight"></i>
                                 <h4>SELECT</h4>
                             </a>
@@ -288,7 +288,13 @@
 
     </script>
     <script>
+        let sel_id = document.getElementsByClassName('selection');
 
+        for(i=0; i<sel_id.length; i++){
+            sel_id[i].addEventListener('click', function(e){
+                
+            });
+        }
     </script>
 </body>
 
